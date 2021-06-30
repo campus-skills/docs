@@ -166,8 +166,12 @@ Synchroniser les contrats
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-body-parameters %}
-{% api-method-parameter name="contrats" type="array" required=true %}
+{% api-method-parameter name="contrats.$.nomApprenant" type="string" required=true %}
+Nom de l'apprenant
+{% endapi-method-parameter %}
 
+{% api-method-parameter name="contrats" type="array" required=true %}
+​
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="contrats.$.nomEntreprise" type="string" required=true %}
