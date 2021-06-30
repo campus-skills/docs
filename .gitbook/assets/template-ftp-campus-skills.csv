@@ -1,0 +1,6 @@
+﻿entreprises;;;;;;;;;;;;;;
+nameGroupe;codeStudent;nameStudent;firstStudent;Email apprenant;code Tuteur entreprise;Nom tuteur entreprise;Prénom tuteur entreprise;email tuteur entreprise;Code tuteur école;Nom tuteur école;Prénom tuteur école;Mail tuteur école;Entreprise;Code Contrat
+Group1;38129757;Felgines;Gregoire;g.felgines@campus-skills.com;38152896;Jobs;Steve;steve@apple.com;5121;Pastel;Eliane;eliane@tuteur.com;APPLE;38157635
+Group1;38092103;Rouleau;Agathe;a.rouleau@campus-skills.com;38189157;Gates;bill;bill@microsoft.com;5122;Pastel;Eliane;eliane@tuteur.com;MICROSOFT;38189164
+Group2;38154771;Paris;helene;h.paris@campus-skills.com;37774075;Elon;Musk;elen@tesla.com;5121;Hants;Frank;frank@tuteur.com;TESLA;38205774
+Group1;38025813;Pric;Marc;m.pric@campus-skills.com;38105507;Bezos;Jeff;jeff@amazon.com;22066922;Pastel;Eliane;eliane@tuteur.com;AMAZON;38129161

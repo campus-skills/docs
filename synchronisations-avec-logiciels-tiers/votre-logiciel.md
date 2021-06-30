@@ -246,5 +246,13 @@ L'identifiant unique du contrat
 
 Voici un exemple de fichier nécessaire à mettre sur un serveur FTP \( si vous en avez pas nous vous donnerons accès à un chez nous \)
 
+Il est nécessaire au préalable d'avoir configuré la structure de votre établissement sur la plateforme.
+
+Le fichier est lu toutes les nuits et nous trouvons les différences automatiquement et les répercutons sur la plateforme
+
+{% file src="../.gitbook/assets/template-ftp-campus-skills.xlsx" caption="Template fichier ftp" %}
+
+{% file src="../.gitbook/assets/template-ftp-campus-skills.csv" %}
+
 
 
