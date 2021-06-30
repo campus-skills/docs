@@ -32,14 +32,198 @@ Synchroniser les sites
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Méthodes pour remonter les sites sur lesquels de votre organisme de formation
+Un s
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-body-parameters %}
 {% api-method-parameter name="sites" type="array" required=true %}
-Un tableau des sites
+Tableau des sites
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="sites.$.codeSite" type="string" required=true %}
+Identifiant unique dans votre SI
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="sites.$.nomSite" type="string" required=true %}
+Nom du site
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% api-method method="post" host="{{base\_url}}/api/sync/v1/formations" path="" %}
+{% api-method-summary %}
+Synchroniser les formations
+{% endapi-method-summary %}
+
+{% api-method-description %}
+ 
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="formations" type="array" required=true %}
+Tableau des formations
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="formations.$.codeFormation" type="string" required=true %}
+Identifiant unique de la formation dans votre SI
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="formations.$.nomFormation" type="string" required=true %}
+Nom de la formation dans votre SI
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% api-method method="post" host="{{base\_url}}/api/sync/v1/groups" path="" %}
+{% api-method-summary %}
+Synchroniser les groupes
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="groupes" type="array" required=true %}
+tableau des groupes à synchroniser
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="groupes.$.codeSite" type="string" required=true %}
+L'identifiant du site associé
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="groupes.$.codeFormation" type="string" required=true %}
+L'identifiant de la formation associée
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="groupes.$.nomGroupe" type="string" required=true %}
+Le nom du groupe
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="groupes.$.codeGroupe" type="string" required=true %}
+Identifiant unique du groupe dans votre SI
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% api-method method="post" host="{{base\_url}}/api/sync/v1/contrats" path="" %}
+{% api-method-summary %}
+Synchroniser les contrats
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="contrats" type="array" required=true %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="contrats.$.nomEntreprise" type="string" required=true %}
+Nom de l'entreprise 
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="contrats.$.emailPersonnel" type="string" required=true %}
+Email du tuteur école
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="contrats.$.prenomPersonnel" type="string" required=true %}
+Prénom du tuteur école
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="contrats.$.nomPersonnel" type="string" required=true %}
+Nom du tuteur école
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="contrats.$.codePersonnel" type="string" required=true %}
+Code du tuteur école
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="contrats.$.emailMaitreApprentissage" type="string" required=true %}
+Email maitre apprentissage
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="contrats.$.prenomMaitreApprentissage" type="string" required=true %}
+Prenom maitre apprentissage
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="contrats.$.nomMaitreApprentissage" type="string" required=true %}
+Nom maitre apprentissage
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="contrats.$.codeMaitreApprentissage" type="string" required=true %}
+Identifiant du maitre apprentissage
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="contrats.$.emailApprenant" type="string" required=true %}
+email de l'apprenant
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="contrats.$.prenomApprenant" type="string" required=true %}
+Prenom de l'apprenant
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="contrats.$.codeApprenant" type="string" required=true %}
+Identifiant de l'apprenant
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="contrats.$.codeGroupe" type="string" required=true %}
+Identifiant du groupe associé
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="contrats.$.codeContrat" type="string" required=true %}
+L'identifiant unique du contrat 
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -60,5 +244,7 @@ Un tableau des sites
 
 ## Synchronisation via FTP
 
-Voici un exemple de fichier nécessaire pour à mettre sur un FTP.
+Voici un exemple de fichier nécessaire à mettre sur un serveur FTP \( si vous en avez pas nous vous donnerons accès à un chez nous \)
+
+
 
