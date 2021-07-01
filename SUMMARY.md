@@ -17,3 +17,7 @@
 * [SSO avec votre logiciel](sso/sso-avec-votre-logiciel.md)
 * [SSO Campus Skills](sso/sso-campus-skills.md)
 
+## Marque blanche
+
+* [Mise en place](marque-blanche/mise-en-place.md)
+
