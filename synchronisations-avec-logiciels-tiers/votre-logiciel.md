@@ -166,6 +166,14 @@ Synchroniser les contrats
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-body-parameters %}
+{% api-method-parameter name="contrats.$.dateFin" type="string" required=false %}
+Date au format DD/MM/YYYY
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="contrats.$.dateDebut" type="string" required=true %}
+Date au format DD/MM/YYYY
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="contrats.$.nomApprenant" type="string" required=true %}
 Nom de l'apprenant
 {% endapi-method-parameter %}
@@ -254,9 +262,5 @@ Il est nécessaire au préalable d'avoir configuré la structure de votre établ
 
 Le fichier est lu toutes les nuits et nous trouvons les différences automatiquement et les répercutons sur la plateforme
 
-{% file src="../.gitbook/assets/template-ftp-campus-skills.xlsx" caption="Template fichier ftp" %}
-
-{% file src="../.gitbook/assets/template-ftp-campus-skills.csv" %}
-
-
+{% file src="../.gitbook/assets/template-ftp-campus-skills \(1\).csv" caption="template ftp" %}
 
