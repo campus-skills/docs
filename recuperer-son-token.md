@@ -13,6 +13,40 @@ Pour l'obtenir merci de nous contacter : dev@campus-skills.com, ce token est str
 Sans ça vous aurez un retour du type 
 
 {% hint style="danger" %}
-403 - Unauthorized
+{ "error": "invalid token", "reason": "Your token is invalid please contact the administrator" }
 {% endhint %}
+
+### Tester son token
+
+{% api-method method="get" host="{{URL}}/api/sync/v1/test" path="" %}
+{% api-method-summary %}
+
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="" type="string" required=false %}
+
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+token valid
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 

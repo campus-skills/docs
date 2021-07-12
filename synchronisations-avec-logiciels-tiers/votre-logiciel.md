@@ -106,7 +106,7 @@ Nom de la formation dans votre SI
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="post" host="{{base\_url}}/api/sync/v1/groups" path="" %}
+{% api-method method="post" host="{{base\_url}}/api/sync/v1/groupes" path="" %}
 {% api-method-summary %}
 Synchroniser les groupes
 {% endapi-method-summary %}
