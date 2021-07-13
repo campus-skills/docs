@@ -12,6 +12,8 @@ Vous pouvez donc ajouter un nouveau prestataire et le nommer Campus Skills, ensu
 
 * `/r/v1/sites`
 * `/r/v1/formations`
+* `/r/v1/periodes`
+* `/r/v1/statuts`
 * `/r/v1/formation-longue/groupes`
 * `/r/v1/formation-longue/apprenants`
 * `/r/v1/contrats` 
