@@ -18,29 +18,14 @@ Sans ça vous aurez un retour du type
 
 ### Tester son token
 
-{% api-method method="get" host="{{URL}}/api/sync/v1/test" path="" %}
-{% api-method-summary %}
+{% swagger baseUrl="{{URL}}/api/sync/v1/test" path="" method="get" summary="" %}
+{% swagger-description %}
 
-{% endapi-method-summary %}
+{% endswagger-description %}
 
-{% api-method-description %}
-
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```
 token valid
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
+{% endswagger-response %}
+{% endswagger %}

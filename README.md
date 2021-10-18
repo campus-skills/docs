@@ -2,7 +2,7 @@
 
 Ceci constitue la **documentation technique** de la plateforme Campus Skills.
 
-Si c'est la documentation utilisateur que vous cherchez elle est ici : [https://help.campus-skills.com/](https://help.campus-skills.com/)
+Si c'est la documentation utilisateur que vous cherchez elle est ici : [https://help.campus-skills.com/](https://help.campus-skills.com)
 
 Si vous avez la moindre question sur son fonctionnement, écrivez à l'équipe des développeurs, nous vous ferons un plaisir de vous répondre : dev@campus-skills.com
 
@@ -13,8 +13,6 @@ A chaque fois les requêtes présentent dans cette documentation doivent être p
 Si vous avez pris l'application au format marque blanche c'est cette URL qu'il faudra utiliser.
 
 Sinon l'url de base est `https://app.campus-skills.com`
-
-
 
 
 
