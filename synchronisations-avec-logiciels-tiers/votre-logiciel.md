@@ -111,31 +111,31 @@ L'identifiant unique du contrat
 Identifiant de la période associée
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="contrats.$.nomPeriode" required="true" %}
+{% swagger-parameter in="body" name="contrats.$.nomPeriode" required="true" type="string" %}
 Nom de la période
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="contrats.$.codeFormation" required="true" %}
+{% swagger-parameter in="body" name="contrats.$.codeFormation" required="true" type="string" %}
 Identifiant de la formation
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="contrats.$.nomFormation" required="true" %}
+{% swagger-parameter in="body" name="contrats.$.nomFormation" required="true" type="string" %}
 Le nom de la formation
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="contrats.$.codeSite" required="true" %}
+{% swagger-parameter in="body" name="contrats.$.codeSite" required="true" type="string" %}
 Identifiant du site
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="contrats.$.nomSite" required="true" %}
+{% swagger-parameter in="body" name="contrats.$.nomSite" required="true" type="string" %}
 Nom du site
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="contrats.$.codeAnnee" required="true" %}
+{% swagger-parameter in="body" name="contrats.$.codeAnnee" required="true" type="string" %}
 Identifiant de l'année
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="contrats.$.nomAnnee" required="true" %}
+{% swagger-parameter in="body" name="contrats.$.nomAnnee" required="true" type="string" %}
 Nom de l'année
 {% endswagger-parameter %}
 
