@@ -15,7 +15,7 @@ Pour synchroniser les données de votre logiciel vers le notre, nous vous propos
 
 Au sein de Campus Skills la structure des données peut être décrite ainsi :
 
-* Votre organisme peut être déployé dans plusieurs villes nous appelons ça des **sites** 
+* Votre organisme peut être déployé dans plusieurs villes nous appelons ça des **sites**&#x20;
 * Il y a des **périodes** de formation qui correspondent classiquement aux années scolaires ( 2020/2021, 2021/2022 etc )
 * Il y a des **programmes** de formations ( BTS MCO, Licence RH ) qui sont déployés sur un site et sur une période
 * Il y a des **années** de formation ( Licence RH 1ière année, License RH 2ième année etc.. )
@@ -141,6 +141,34 @@ Nom de l'année
 
 {% swagger-response status="200" description="" %}
 ```
+```
+{% endswagger-response %}
+{% endswagger %}
+
+{% swagger method="get" path="" baseUrl="{{base_url}}/api/sync/v1/contrats" summary="Récupère tous les contrats" %}
+{% swagger-description %}
+Retourne les contrats selon la même structure de donnees que celle envoyee dans le POST au dessus
+{% endswagger-description %}
+
+{% swagger-response status="200: OK" description="" %}
+```javascript
+{
+    // Response
+}
+```
+{% endswagger-response %}
+{% endswagger %}
+
+{% swagger method="delete" path="" baseUrl="{{base_url}}/api/sync/v1/contrats" summary="Supprimer tous les contrats" %}
+{% swagger-description %}
+Attention cette route est a utiliser uniquement dans le bac à sable
+{% endswagger-description %}
+
+{% swagger-response status="200: OK" description="" %}
+```javascript
+{
+    // Response
+}
 ```
 {% endswagger-response %}
 {% endswagger %}
