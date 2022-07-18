@@ -15,10 +15,10 @@ Pour synchroniser les données de votre logiciel vers le notre, nous vous propos
 
 Au sein de Campus Skills la structure des données peut être décrite ainsi :
 
-* Votre organisme peut être déployé dans plusieurs villes nous appelons ça des **sites**&#x20;
-* Il y a des **périodes** de formation qui correspondent classiquement aux années scolaires ( 2020/2021, 2021/2022 etc )
-* Il y a des **programmes** de formations ( BTS MCO, Licence RH ) qui sont déployés sur un site et sur une période
-* Il y a des **années** de formation ( Licence RH 1ière année, License RH 2ième année etc.. )
+- Votre organisme peut être déployé dans plusieurs villes nous appelons ça des **sites**&#x20;
+- Il y a des **périodes** de formation qui correspondent classiquement aux années scolaires ( 2020/2021, 2021/2022 etc )
+- Il y a des **programmes** de formations ( BTS MCO, Licence RH ) qui sont déployés sur un site et sur une période
+- Il y a des **années** de formation ( Licence RH 1ière année, License RH 2ième année etc.. )
 
 Nous voulons avec cette structure regrouper les apprenants qui suivent la même formation sur le même site pour la même période donnée et la même année.
 
@@ -26,11 +26,11 @@ Cela vous permettra d'avoir un suivi clair.
 
 Nous avons donc besoin d'avoir :
 
-* La liste des formations à synchroniser
-* La liste des sites où ces formations sont dispensées.
-* La liste des périodes à synchroniser
-* La liste des années de vos formations.
-* Les contrats pour chacun de ces apprenants
+- La liste des formations à synchroniser
+- La liste des sites où ces formations sont dispensées.
+- La liste des périodes à synchroniser
+- La liste des années de vos formations.
+- Les contrats pour chacun de ces apprenants
 
 ## Synchronisation via API REST
 
@@ -51,8 +51,12 @@ Date au format DD/MM/YYYY
 Date au format DD/MM/YYYY
 {% endswagger-parameter %}
 
+{% swagger-parameter in="body" name="contrats.$.nomGroupe" type="string" required="true" %}
+Nom du groipe
+{% endswagger-parameter %}
+
 {% swagger-parameter in="body" name="contrats.$.nomEntreprise" type="string" required="true" %}
-Nom de l'entreprise 
+Nom de l'entreprise
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="contrats.$.emailPersonnel" type="string" required="true" %}
@@ -104,7 +108,7 @@ Identifiant de l'apprenant
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="contrats.$.codeContrat" type="string" required="true" %}
-L'identifiant unique du contrat 
+L'identifiant unique du contrat
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="contrats.$.codePeriode" type="string" required="true" %}
@@ -140,8 +144,11 @@ Nom de l'année
 {% endswagger-parameter %}
 
 {% swagger-response status="200" description="" %}
+
 ```
+
 ```
+
 {% endswagger-response %}
 {% endswagger %}
 
@@ -151,11 +158,13 @@ Retourne les contrats selon la même structure de donnees que celle envoyee dans
 {% endswagger-description %}
 
 {% swagger-response status="200: OK" description="" %}
+
 ```javascript
 {
-    // Response
+  // Response
 }
 ```
+
 {% endswagger-response %}
 {% endswagger %}
 
@@ -165,11 +174,13 @@ Attention cette route est a utiliser uniquement dans le bac à sable
 {% endswagger-description %}
 
 {% swagger-response status="200: OK" description="" %}
+
 ```javascript
 {
-    // Response
+  // Response
 }
 ```
+
 {% endswagger-response %}
 {% endswagger %}
 
