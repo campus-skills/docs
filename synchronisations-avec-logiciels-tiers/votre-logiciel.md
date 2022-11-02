@@ -107,6 +107,10 @@ Prenom de l'apprenant
 Identifiant de l'apprenant
 {% endswagger-parameter %}
 
+{% swagger-parameter in="body" name="contrats.$.codeGroupe" type="string" required="true" %}
+L'identifiant unique du groupe de l'apprenant
+{% endswagger-parameter %}
+
 {% swagger-parameter in="body" name="contrats.$.codeContrat" type="string" required="true" %}
 L'identifiant unique du contrat
 {% endswagger-parameter %}
