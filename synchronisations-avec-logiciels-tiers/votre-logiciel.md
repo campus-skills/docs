@@ -147,6 +147,18 @@ Identifiant de l'année
 Nom de l'année
 {% endswagger-parameter %}
 
+{% swagger-parameter in="body" name="contrats.$.missionTitle" required="false" type="string" %}
+Titre de la mission
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="contrats.$.missionDetails" required="false" type="string" %}
+Descriptif de la mission
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="contrats.$.rncp" required="false" type="string" %}
+codeRNCP
+{% endswagger-parameter %}
+
 {% swagger-response status="200" description="" %}
 
 ```
