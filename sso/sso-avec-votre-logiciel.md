@@ -2,7 +2,11 @@
 
 Nous pouvons nous connecter avec un SSO que vous avez chez vous afin d'éviter la duplication des identifiants d'accès.
 
-Nous privilégions l'authentification avec le protocole SAML2, il vous suffit pour celà de nous fournir un certain nombre d'informations.
+Cette configuration peut s'appliquer pour des utilisateurs et d'autres peuvent bénéficier de l'authentification classique avec mot de passe et email.
+
+Par exemple : Les tuteurs entreprise peuvent ne pas avoir de compte au sein de votre SI mais les étudiants et les formateurs ou chargés de relation entreprise oui. Dans ce cas nous configurons la plateforme pour proposer la connexion SSO et la connexion Login/MotDePasse.
+
+* Nous privilégions l'authentification avec le protocole SAML2, il vous suffit pour celà de nous fournir un certain nombre d'informations
 
 Pour le moment nous parlons les protocoles suivants :
 
@@ -10,9 +14,7 @@ Pour le moment nous parlons les protocoles suivants :
 - [openam](https://www.forgerock.com/)
 - [adfs](https://docs.microsoft.com/en-us/windows-server/identity/active-directory-federation-services)
 
-## Bénéfices
 
-Si vous disposez d'une interface existante pour vos utilisateurs ( LMS ou autres ), il vous suffit de créer un bouton à un endroit de cette interface et qui ouvre l'application Campus Skills dans un nouvel onglet et un utlisateur connecté dans votre application arrivera directement connecté sur le notre.
 
 ## SSO SAML avec Microsoft AD 
 
@@ -33,4 +35,19 @@ Voici les informations à remplir :
 
 Une fois fait merci de nous transmettre le XML de certificat fédéré.
 
-[](https://campus-skills.s3.eu-west-1.amazonaws.com/image001.png)
+![](https://campus-skills.s3.eu-west-1.amazonaws.com/image001.png)
+
+## SSO Oauth2 avec Google
+
+Si vous avez la suite Google, nous pouvons mettre en place cette authentification.
+
+Pour celà il faut suivre [la procédure ici](https://devstory.net/11123/creation-d-un-google-api-console-project-et-oauth2-client-id)
+
+Sachant que les origines à autoriser sont : 
+* [URL application campus skills] et https://campus-skills.eu.ngrok.io pour nos tests.
+* Les urls de ridirection sont [URL application campus skills]/_oauth/[identifiant unique] et https://campus-skills.eu.ngrok.io/_oauth/[identifiant unique] pour nos tests
+
+où [URL de l'application] est celle que vous avez choisi dans la section marque blanche et [identifiant unique] est un identidiant que nous vous transmettrons.
+
+Une fois fait il faudra nous transmettre le clientId et le clientSecret à dev@campus-skills.com
+
