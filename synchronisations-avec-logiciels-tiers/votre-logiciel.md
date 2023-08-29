@@ -15,10 +15,10 @@ Pour synchroniser les données de votre logiciel vers le notre, nous vous propos
 
 Au sein de Campus Skills la structure des données peut être décrite ainsi :
 
-- Votre organisme peut être déployé dans plusieurs villes nous appelons ça des **sites**&#x20;
-- Il y a des **périodes** de formation qui correspondent classiquement aux années scolaires ( 2020/2021, 2021/2022 etc )
-- Il y a des **programmes** de formations ( BTS MCO, Licence RH ) qui sont déployés sur un site et sur une période
-- Il y a des **années** de formation ( Licence RH 1ière année, License RH 2ième année etc.. )
+* Votre organisme peut être déployé dans plusieurs villes nous appelons ça des **sites**
+* Il y a des **périodes** de formation qui correspondent classiquement aux années scolaires ( 2020/2021, 2021/2022 etc )
+* Il y a des **programmes** de formations ( BTS MCO, Licence RH ) qui sont déployés sur un site et sur une période
+* Il y a des **années** de formation ( Licence RH 1ière année, License RH 2ième année etc.. )
 
 Nous voulons avec cette structure regrouper les apprenants qui suivent la même formation sur le même site pour la même période donnée et la même année.
 
@@ -26,11 +26,11 @@ Cela vous permettra d'avoir un suivi clair.
 
 Nous avons donc besoin d'avoir :
 
-- La liste des formations à synchroniser
-- La liste des sites où ces formations sont dispensées.
-- La liste des périodes à synchroniser
-- La liste des années de vos formations.
-- Les contrats pour chacun de ces apprenants
+* La liste des formations à synchroniser
+* La liste des sites où ces formations sont dispensées.
+* La liste des périodes à synchroniser
+* La liste des années de vos formations.
+* Les contrats pour chacun de ces apprenants
 
 ## Synchronisation via API REST
 
@@ -43,11 +43,11 @@ Nous avons donc besoin d'avoir :
 ​
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="contrats.$.dateFin" type="string" %}
+{% swagger-parameter in="body" name="contrats.$.dateFin" type="string" required="false" %}
 Date au format DD/MM/YYYY
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="contrats.$.dateDebut" type="string" %}
+{% swagger-parameter in="body" name="contrats.$.dateDebut" type="string" required="false" %}
 Date au format DD/MM/YYYY
 {% endswagger-parameter %}
 
@@ -160,26 +160,31 @@ codeRNCP
 {% endswagger-parameter %}
 
 {% swagger-response status="200" description="" %}
-
 ```
-
 ```
-
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger method="get" path="" baseUrl="{{base_url}}/api/sync/v1/contrats" summary="Récupère tous les contrats" %}
+{% swagger method="get" path="" baseUrl="{{base_url}}/api/sync/v1/contrats" summary="Récupère tous les contrats intégrés" %}
 {% swagger-description %}
 Retourne les contrats selon la même structure de donnees que celle envoyee dans le POST au dessus
 {% endswagger-description %}
 
 {% swagger-response status="200: OK" description="" %}
-
 ```javascript
 {
   // Response
 }
 ```
+{% endswagger-response %}
+{% endswagger %}
+
+{% swagger method="get" path="" baseUrl="{{base_url}}/api/sync/v1/contrats-get-all" summary="Récupère tous les contrats transmis" %}
+{% swagger-description %}
+
+{% endswagger-description %}
+
+{% swagger-response status="200: OK" description="" %}
 
 {% endswagger-response %}
 {% endswagger %}
@@ -190,15 +195,19 @@ Attention cette route est a utiliser uniquement dans le bac à sable
 {% endswagger-description %}
 
 {% swagger-response status="200: OK" description="" %}
-
 ```javascript
 {
   // Response
 }
 ```
-
 {% endswagger-response %}
 {% endswagger %}
+
+#### Différence entre contrat transmis et intégré
+
+Un contrat transmis est une donnée que nous recevons via API
+
+Un contrat intégré est un contrat transmis que nous avons su associer à une session ( cela nécessite que l'équipe intégration a configuré les modèles )
 
 ## Synchronisation via FTP
 
