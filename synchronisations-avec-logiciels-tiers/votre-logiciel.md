@@ -155,6 +155,10 @@ Titre de la mission
 Descriptif de la mission
 {% endswagger-parameter %}
 
+{% swagger-parameter in="body" name="contrats.$.monthStartGroup" required="false" type="string" %}
+Info de démarrage du groupe permettant de gérer les rentrées décalées
+{% endswagger-parameter %}
+
 {% swagger-parameter in="body" name="contrats.$.rncp" required="false" type="string" %}
 codeRNCP
 {% endswagger-parameter %}
