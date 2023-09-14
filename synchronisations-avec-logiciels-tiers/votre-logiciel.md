@@ -52,7 +52,7 @@ Date au format DD/MM/YYYY
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="contrats.$.nomGroupe" type="string" required="true" %}
-Nom du groipe
+Nom du groupe
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="contrats.$.nomEntreprise" type="string" required="true" %}
