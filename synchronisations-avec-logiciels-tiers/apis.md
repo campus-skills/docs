@@ -1,15 +1,12 @@
 ---
 description: >-
   Ici nous vous proposons d'utiliser notre API pour synchroniser les données
-  depuis votre logiciel de gestion vers le notre
+  depuis votre logiciel de gestion vers le notre.
 ---
 
 # Votre logiciel
 
-Pour synchroniser les données de votre logiciel vers le notre, nous vous proposons deux façons :
-
-1. Utiliser directement l'API REST
-2. Déposer quotidiennement sur un serveur ftp un fichier au format csv respectant un certain formalisme.
+Pour synchroniser les données de votre logiciel vers le notre, nous vous proposons d'utiliser directement l'API REST
 
 ### Structure de données
 
@@ -17,20 +14,15 @@ Au sein de Campus Skills la structure des données peut être décrite ainsi :
 
 * Votre organisme peut être déployé dans plusieurs villes nous appelons ça des **sites**
 * Il y a des **périodes** de formation qui correspondent classiquement aux années scolaires ( 2020/2021, 2021/2022 etc )
-* Il y a des **programmes** de formations ( BTS MCO, Licence RH ) qui sont déployés sur un site et sur une période
+* Il y a des **programmes** de formations ( BTS MCO, Licence RH ) qui sont déployés sur un site et sur une période.
 * Il y a des **années** de formation ( Licence RH 1ière année, License RH 2ième année etc.. )
+* Et il y a des **groupes** qui correspondent à des sessions de formations.
 
 Nous voulons avec cette structure regrouper les apprenants qui suivent la même formation sur le même site pour la même période donnée et la même année.
 
 Cela vous permettra d'avoir un suivi clair.
 
-Nous avons donc besoin d'avoir :
-
-* La liste des formations à synchroniser
-* La liste des sites où ces formations sont dispensées.
-* La liste des périodes à synchroniser
-* La liste des années de vos formations.
-* Les contrats pour chacun de ces apprenants
+Ainsi en plus des données sur le contrat, nous vous demandons d'ajouter des informations supplémentaires
 
 ## Synchronisation via API REST
 
@@ -116,7 +108,7 @@ L'identifiant unique du contrat
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="contrats.$.codePeriode" type="string" required="true" %}
-Identifiant de la période associée
+Identifiant de la période associée ( le couple codePeriode, nomPeriode doit être unique )
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="contrats.$.nomPeriode" required="true" type="string" %}
@@ -124,7 +116,7 @@ Nom de la période
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="contrats.$.codeFormation" required="true" type="string" %}
-Identifiant de la formation
+Identifiant de la formation ( le couple codeFormation, nomFormation doit être unique )
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="contrats.$.nomFormation" required="true" type="string" %}
@@ -132,7 +124,7 @@ Le nom de la formation
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="contrats.$.codeSite" required="true" type="string" %}
-Identifiant du site
+Identifiant du site ( le couple codeSite, nomSite doit être unique )
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="contrats.$.nomSite" required="true" type="string" %}
@@ -140,7 +132,7 @@ Nom du site
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="contrats.$.codeAnnee" required="true" type="string" %}
-Identifiant de l'année
+Identifiant de l'année ( le couple codeAnnee, nomAnnee doit être unique )
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="contrats.$.nomAnnee" required="true" type="string" %}
@@ -213,14 +205,4 @@ Un contrat transmis est une donnée que nous recevons via API
 
 Un contrat intégré est un contrat transmis que nous avons su associer à une session ( cela nécessite que l'équipe intégration a configuré les modèles )
 
-## Synchronisation via FTP
 
-Voici un exemple de fichier nécessaire à mettre sur un serveur FTP ( si vous en avez pas nous vous donnerons accès à un chez nous )
-
-Il est nécessaire au préalable d'avoir configuré la structure de votre établissement sur la plateforme.
-
-Le fichier est lu toutes les nuits et nous trouvons les différences automatiquement et les répercutons sur la plateforme
-
-{% file src="../.gitbook/assets/API Sync.csv" %}
-template ftp
-{% endfile %}

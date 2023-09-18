@@ -10,7 +10,11 @@
 ## Synchronisations avec logiciels tiers
 
 - [Ypareo](synchronisations-avec-logiciels-tiers/ypareo.md)
-- [Votre logiciel](synchronisations-avec-logiciels-tiers/votre-logiciel.md)
+- [Aimaira](synchronisations-avec-logiciels-tiers/aimaira.md)
+- [SCForm/Galia](synchronisations-avec-logiciels-tiers/scform.md)
+- [GestiBase](synchronisations-avec-logiciels-tiers/ypareo.md)
+- [Excel/CSV](synchronisations-avec-logiciels-tiers/ypareo.md)
+- [Nos APIs](synchronisations-avec-logiciels-tiers/votre-logiciel.md)
 
 ## SSO
 
