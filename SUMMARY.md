@@ -12,7 +12,7 @@
 - [Ypareo](synchronisations-avec-logiciels-tiers/ypareo.md)
 - [Aimaira](synchronisations-avec-logiciels-tiers/aimaira.md)
 - [SCForm/Galia](synchronisations-avec-logiciels-tiers/scform.md)
-- [GestiBase](synchronisations-avec-logiciels-tiers/ypareo.md)
+- [GestiBase](synchronisations-avec-logiciels-tiers/gestibase.md)
 - [Excel/CSV](synchronisations-avec-logiciels-tiers/ypareo.md)
 - [Nos APIs](synchronisations-avec-logiciels-tiers/votre-logiciel.md)
 
