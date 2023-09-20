@@ -13,7 +13,7 @@
 - [Aimaira](synchronisations-avec-logiciels-tiers/aimaira.md)
 - [SCForm/Galia](synchronisations-avec-logiciels-tiers/scform.md)
 - [GestiBase](synchronisations-avec-logiciels-tiers/gestibase.md)
-- [Excel/CSV](synchronisations-avec-logiciels-tiers/ypareo.md)
+- [Excel/CSV](synchronisations-avec-logiciels-tiers/csv.md)
 - [Nos APIs](synchronisations-avec-logiciels-tiers/votre-logiciel.md)
 
 ## SSO
