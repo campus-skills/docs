@@ -64,7 +64,7 @@ Nom du tuteur école
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="contrats.$.codePersonnel" type="string" required="true" %}
-Code du tuteur école
+Code du tuteur école, doit être unique parmi tous les utilisateurs
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="contrats.$.emailMaitreApprentissage" type="string" required="true" %}
@@ -80,7 +80,7 @@ Nom maitre apprentissage
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="contrats.$.codeMaitreApprentissage" type="string" required="true" %}
-Identifiant du maitre apprentissage
+Identifiant du maitre apprentissage, doit être unique parmi tous les utilisateurs
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="contrats.$.nomApprenant" type="string" required="true" %}
@@ -96,7 +96,7 @@ Prenom de l'apprenant
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="contrats.$.codeApprenant" type="string" required="true" %}
-Identifiant de l'apprenant
+Identifiant de l'apprenant, doit être unique parmi tous les utilisateurs
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="contrats.$.codeGroupe" type="string" required="true" %}
