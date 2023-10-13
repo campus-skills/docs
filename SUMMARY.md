@@ -14,7 +14,7 @@
 - [SCForm/Galia](synchronisations-avec-logiciels-tiers/scform.md)
 - [GestiBase](synchronisations-avec-logiciels-tiers/gestibase.md)
 - [Excel/CSV](synchronisations-avec-logiciels-tiers/csv.md)
-- [Nos APIs](synchronisations-avec-logiciels-tiers/votre-logiciel.md)
+- [Nos APIs](synchronisations-avec-logiciels-tiers/apis.md)
 
 ## SSO
 
