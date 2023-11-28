@@ -4,7 +4,7 @@ description: >-
   apprenant.
 ---
 
-# En cours
+# API Public
 
 
 
@@ -22,16 +22,16 @@ L'id de l'utilisateur dans votre SI
 // La réponse sera de type et vous permet d'accéder à la moyenne globale et aussi à la moyenne par bloc
 
 {
-    "studentName": "ALICIA THEROND",
-    "userId": "jcBg3T6ARNrs28HEL",
+    "studentName": "Prénom nom de l'apprenant",
+    "userId": "id dans le SI Campus skills",
     "sessions": [
-        "sessionId": "id de la session",
+        "sessionId": "id de la session dans le SI Campus skills",
 	"sessionName": "nom de la session",
 	"autoValidationMean": "Moyenne autoévaludation",
 	"validationMean": "Moyenne évaluation",
 	"companyValidationMean": "Moyenne validation tuteur entreprise",
         "blocks": [
-		"blockId": "BC8HdEuZeBzgxFniy",
+		"blockId": "id dans le SI Campus skills",
 		"blockName": "CONSEIL EN INGÉNERIE IMMOBILIER",
 		"autoValidationMean": "Moyenne autoévaludation",
 	        "validationMean": "Moyenne évaluation",
