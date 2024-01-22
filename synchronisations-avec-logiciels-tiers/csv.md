@@ -16,4 +16,6 @@ Avant de valider, nous vous donnerons les informations sur les contrats dont nou
 Voici un exemple de fichier nécessaire à mettre sur un serveur FTP ( si vous en avez pas nous vous donnerons accès à un chez nous )
 
 Il est nécessaire au préalable d'avoir configuré la structure de votre établissement sur la plateforme.
+
+{% file src="../.gitbook/assets/API Sync.csv" %} template ftp {% endfile %}
  
