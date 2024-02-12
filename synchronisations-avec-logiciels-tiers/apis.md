@@ -24,6 +24,19 @@ Cela vous permettra d'avoir un suivi clair.
 
 Ainsi en plus des données sur le contrat, nous vous demandons d'ajouter des informations supplémentaires
 
+#### Unicité des ids
+
+Attention dans les données à synchroniser nous vous demandons de spécifier les identifiants de vos utilisateurs, ces identifiants doivent être uniques quelque soit la collection.
+
+Par exemple si un etudiant a le même identifiant qu'un maitre d'apprentissage, les comptes vont être mergés chez nous.
+
+Si vous avez des tables différentes en fonction des rôles et donc potentiellement des conflits d'ids entre ces tables, merci de prédixer les identifiant envoyés.
+
+#### Unicité des emails
+
+Dans notre SI, un email est rattaché à un compte et un seul. Si deux tuteurs entreprises ont le même mail, cela générera un conflit de nom sur la plateforme.
+
+
 ## Synchronisation via API REST
 
 {% swagger baseUrl="{{base_url}}/api/sync/v1/contrats" path="" method="post" summary="Synchroniser les contrats" %}
