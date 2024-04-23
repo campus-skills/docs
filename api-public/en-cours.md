@@ -6,18 +6,48 @@ description: >-
 
 # API Public
 
+&#x20;
 
+## Create a new user
 
-{% swagger method="get" path="api/v1/grades" baseUrl="{{URL}}/" summary="Récupérer les notes et les validations de compétences d'un apprenant" %}
-{% swagger-description %}
+<mark style="color:green;">`POST`</mark> `{{URL}}/api/v1/sync/calendar-group-ics`
 
-{% endswagger-description %}
+\<Description of the endpoint>
 
-{% swagger-parameter in="query" name="studentId" required="true" %}
-L'id de l'utilisateur dans votre SI
-{% endswagger-parameter %}
+**Headers**
 
-{% swagger-response status="200: OK" description="" %}
+| Name          | Value              |
+| ------------- | ------------------ |
+| Content-Type  | `application/json` |
+| Authorization | `Bearer <token>`   |
+
+**Body**
+
+| Name          | Type   | Description                          |
+| ------------- | ------ | ------------------------------------ |
+| `groupId`     | string | code du groupe transmis précédemment |
+| `calendarUrl` | string | lien calendrier ics                  |
+
+**Response**
+
+{% tabs %}
+{% tab title="200: OK " %}
+
+{% endtab %}
+{% endtabs %}
+
+## Récupérer les notes et les validations de compétences d'un apprenant
+
+<mark style="color:blue;">`GET`</mark> `{{URL}}/api/v1/grades`
+
+#### Query Parameters
+
+| Name                                        | Type   | Description                         |
+| ------------------------------------------- | ------ | ----------------------------------- |
+| studentId<mark style="color:red;">\*</mark> | String | L'id de l'utilisateur dans votre SI |
+
+{% tabs %}
+{% tab title="200: OK " %}
 ```json
 // La réponse sera de type et vous permet d'accéder à la moyenne globale et aussi à la moyenne par bloc
 
@@ -55,7 +85,7 @@ L'id de l'utilisateur dans votre SI
 
 }
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
 Toutes les données de notre application sont accessibles via APIs, nous les documentons au fur et à mesure de vos besoins.
