@@ -2,12 +2,42 @@
 
 [L'ERP GestiBase](https://www.aimaira.fr/)
 
-Le plus simple est de demander à votre contact chez Aimaira de vous fournir ça en mettant l'équipe technique en copie ( ils sont habitués et connaissent très bien l'éditeur Campus Skills )
+La synchronisation des contrats se fait via notre API dont la description est ici : [https://app.gitbook.com/o/bidCurKndlx9Rc0YlO5f/s/-MdGXj\_IchYujmJOF-0s/\~/changes/28/synchronisations-avec-logiciels-tiers/apis](apis.md)
 
-Une fois fait nous pourrons sélectionner ensemble les programmes de formation que vous souhaitez synchroniser.
 
-Nous regroupons l'ensemble des apprenants par programme et par année de formation.
 
- 
+Pour la connexion sans mot de passe
 
- 
+
+
+Le token mentionné ici est différent de celui utilisé dans les APIs de synchronisation et il vous ai transféré par email
+
+
+
+<mark style="color:green;">`GET`</mark> `/api/auth/gestibase`
+
+Pour récupérer une URL sans mot de passe pour un utilisateur gestibase
+
+**Headers**
+
+| Name          | Value              |
+| ------------- | ------------------ |
+| Content-Type  | `application/json` |
+| Authorization | `Bearer <token>`   |
+
+**Body**
+
+| Name       | Type   | Description            |
+| ---------- | ------ | ---------------------- |
+| `email`    | string | Email de l'utilisateur |
+| `clientId` | string | Client Id transmis     |
+
+**Response**
+
+{% tabs %}
+{% tab title="200" %}
+```json
+urlpasswordLess
+```
+{% endtab %}
+{% endtabs %}
