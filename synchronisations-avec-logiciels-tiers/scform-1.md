@@ -19,7 +19,7 @@ Pour récupérer une URL sans mot de passe pour un utilisateur Tu Commences Dema
 | Content-Type  | `application/json` |
 | Authorization | `Bearer <token>`   |
 
-**Body**
+**Query**
 
 | Name       | Type   | Description            |
 | ---------- | ------ | ---------------------- |

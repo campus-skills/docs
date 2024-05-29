@@ -25,7 +25,7 @@ Pour récupérer une URL sans mot de passe pour un utilisateur GALIA
 | Content-Type  | `application/json` |
 | Authorization | `Bearer <token>`   |
 
-**Body**
+**query**
 
 | Name       | Type   | Description            |
 | ---------- | ------ | ---------------------- |
