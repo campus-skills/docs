@@ -4,7 +4,7 @@ description: >-
   depuis votre logiciel de gestion vers le notre.
 ---
 
-# Votre logiciel
+# Nos APIs
 
 Pour synchroniser les données de votre logiciel vers le notre, nous vous proposons d'utiliser directement l'API REST
 
@@ -36,186 +36,120 @@ Si vous avez des tables différentes en fonction des rôles et donc potentiellem
 
 Dans notre SI, un email est rattaché à un compte et un seul. Si deux tuteurs entreprises ont le même mail, vous ne pourrez pas synchroniser les données
 
-
 ## Synchronisation via API REST
 
-{% swagger baseUrl="{{base_url}}/api/sync/v1/contrats" path="" method="post" summary="Synchroniser les contrats" %}
-{% swagger-description %}
+## Synchroniser les contrats
 
-{% endswagger-description %}
+<mark style="color:green;">`POST`</mark> `{{base_url}}/api/sync/v1/contrats`
 
-{% swagger-parameter in="body" name="contrats" type="array" required="true" %}
-​
-{% endswagger-parameter %}
+#### Request Body
 
-{% swagger-parameter in="body" name="contrats.$.dateFin" type="string" required="false" %}
-Date au format DD/MM/YYYY
-{% endswagger-parameter %}
+| Name                                                                   | Type   | Description                                                                               |
+| ---------------------------------------------------------------------- | ------ | ----------------------------------------------------------------------------------------- |
+| contrats<mark style="color:red;">\*</mark>                             | array  | ​                                                                                         |
+| contrats.$.dateFin                                                     | string | Date au format DD/MM/YYYY                                                                 |
+| contrats.$.dateDebut                                                   | string | Date au format DD/MM/YYYY                                                                 |
+| contrats.$.nomGroupe<mark style="color:red;">\*</mark>                 | string | Nom du groupe                                                                             |
+| contrats.$.nomEntreprise<mark style="color:red;">\*</mark>             | string | Nom de l'entreprise                                                                       |
+| contrats.$.emailPersonnel<mark style="color:red;">\*</mark>            | string | Email du tuteur école                                                                     |
+| contrats.$.prenomPersonnel<mark style="color:red;">\*</mark>           | string | Prénom du tuteur école                                                                    |
+| contrats.$.nomPersonnel<mark style="color:red;">\*</mark>              | string | Nom du tuteur école                                                                       |
+| contrats.$.codePersonnel<mark style="color:red;">\*</mark>             | string | Code du tuteur école, doit être unique parmi tous les utilisateurs                        |
+| contrats.$.emailMaitreApprentissage<mark style="color:red;">\*</mark>  | string | Email maitre apprentissage                                                                |
+| contrats.$.prenomMaitreApprentissage<mark style="color:red;">\*</mark> | string | Prenom maitre apprentissage                                                               |
+| contrats.$.nomMaitreApprentissage<mark style="color:red;">\*</mark>    | string | Nom maitre apprentissage                                                                  |
+| contrats.$.codeMaitreApprentissage<mark style="color:red;">\*</mark>   | string | Identifiant du maitre apprentissage, doit être unique parmi tous les utilisateurs         |
+| contrats.$.nomApprenant<mark style="color:red;">\*</mark>              | string | Nom de l'apprenant                                                                        |
+| contrats.$.emailApprenant<mark style="color:red;">\*</mark>            | string | email de l'apprenant                                                                      |
+| contrats.$.prenomApprenant<mark style="color:red;">\*</mark>           | string | Prenom de l'apprenant                                                                     |
+| contrats.$.codeApprenant<mark style="color:red;">\*</mark>             | string | Identifiant de l'apprenant, doit être unique parmi tous les utilisateurs                  |
+| contrats.$.codeGroupe<mark style="color:red;">\*</mark>                | string | L'identifiant unique du groupe de l'apprenant                                             |
+| contrats.$.codeContrat<mark style="color:red;">\*</mark>               | string | L'identifiant unique du contrat                                                           |
+| contrats.$.codePeriode<mark style="color:red;">\*</mark>               | string | Identifiant de la période associée ( le couple codePeriode, nomPeriode doit être unique ) |
+| contrats.$.nomPeriode<mark style="color:red;">\*</mark>                | string | Nom de la période                                                                         |
+| contrats.$.codeFormation<mark style="color:red;">\*</mark>             | string | Identifiant de la formation ( le couple codeFormation, nomFormation doit être unique )    |
+| contrats.$.nomFormation<mark style="color:red;">\*</mark>              | string | Le nom de la formation                                                                    |
+| contrats.$.codeSite<mark style="color:red;">\*</mark>                  | string | Identifiant du site ( le couple codeSite, nomSite doit être unique )                      |
+| contrats.$.nomSite<mark style="color:red;">\*</mark>                   | string | Nom du site                                                                               |
+| contrats.$.codeAnnee<mark style="color:red;">\*</mark>                 | string | Identifiant de l'année ( le couple codeAnnee, nomAnnee doit être unique )                 |
+| contrats.$.nomAnnee<mark style="color:red;">\*</mark>                  | string | Nom de l'année                                                                            |
+| contrats.$.missionTitle                                                | string | Titre de la mission                                                                       |
+| contrats.$.missionDetails                                              | string | Descriptif de la mission                                                                  |
+| contrats.$.monthStartGroup                                             | string | Info de démarrage du groupe permettant de gérer les rentrées décalées                     |
+| contrats.$.rncp                                                        | string | codeRNCP                                                                                  |
 
-{% swagger-parameter in="body" name="contrats.$.dateDebut" type="string" required="false" %}
-Date au format DD/MM/YYYY
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="contrats.$.nomGroupe" type="string" required="true" %}
-Nom du groupe
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="contrats.$.nomEntreprise" type="string" required="true" %}
-Nom de l'entreprise
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="contrats.$.emailPersonnel" type="string" required="true" %}
-Email du tuteur école
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="contrats.$.prenomPersonnel" type="string" required="true" %}
-Prénom du tuteur école
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="contrats.$.nomPersonnel" type="string" required="true" %}
-Nom du tuteur école
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="contrats.$.codePersonnel" type="string" required="true" %}
-Code du tuteur école, doit être unique parmi tous les utilisateurs
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="contrats.$.emailMaitreApprentissage" type="string" required="true" %}
-Email maitre apprentissage
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="contrats.$.prenomMaitreApprentissage" type="string" required="true" %}
-Prenom maitre apprentissage
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="contrats.$.nomMaitreApprentissage" type="string" required="true" %}
-Nom maitre apprentissage
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="contrats.$.codeMaitreApprentissage" type="string" required="true" %}
-Identifiant du maitre apprentissage, doit être unique parmi tous les utilisateurs
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="contrats.$.nomApprenant" type="string" required="true" %}
-Nom de l'apprenant
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="contrats.$.emailApprenant" type="string" required="true" %}
-email de l'apprenant
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="contrats.$.prenomApprenant" type="string" required="true" %}
-Prenom de l'apprenant
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="contrats.$.codeApprenant" type="string" required="true" %}
-Identifiant de l'apprenant, doit être unique parmi tous les utilisateurs
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="contrats.$.codeGroupe" type="string" required="true" %}
-L'identifiant unique du groupe de l'apprenant
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="contrats.$.codeContrat" type="string" required="true" %}
-L'identifiant unique du contrat
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="contrats.$.codePeriode" type="string" required="true" %}
-Identifiant de la période associée ( le couple codePeriode, nomPeriode doit être unique )
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="contrats.$.nomPeriode" required="true" type="string" %}
-Nom de la période
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="contrats.$.codeFormation" required="true" type="string" %}
-Identifiant de la formation ( le couple codeFormation, nomFormation doit être unique )
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="contrats.$.nomFormation" required="true" type="string" %}
-Le nom de la formation
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="contrats.$.codeSite" required="true" type="string" %}
-Identifiant du site ( le couple codeSite, nomSite doit être unique )
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="contrats.$.nomSite" required="true" type="string" %}
-Nom du site
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="contrats.$.codeAnnee" required="true" type="string" %}
-Identifiant de l'année ( le couple codeAnnee, nomAnnee doit être unique )
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="contrats.$.nomAnnee" required="true" type="string" %}
-Nom de l'année
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="contrats.$.missionTitle" required="false" type="string" %}
-Titre de la mission
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="contrats.$.missionDetails" required="false" type="string" %}
-Descriptif de la mission
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="contrats.$.monthStartGroup" required="false" type="string" %}
-Info de démarrage du groupe permettant de gérer les rentrées décalées
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="contrats.$.rncp" required="false" type="string" %}
-codeRNCP
-{% endswagger-parameter %}
-
-{% swagger-response status="200" description="" %}
+{% tabs %}
+{% tab title="200 " %}
 ```
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
-{% swagger method="get" path="" baseUrl="{{base_url}}/api/sync/v1/contrats" summary="Récupère tous les contrats intégrés" %}
-{% swagger-description %}
+## Récupère tous les contrats intégrés
+
+<mark style="color:blue;">`GET`</mark> `{{base_url}}/api/sync/v1/contrats`
+
 Retourne les contrats selon la même structure de donnees que celle envoyee dans le POST au dessus
-{% endswagger-description %}
 
-{% swagger-response status="200: OK" description="" %}
+{% tabs %}
+{% tab title="200: OK " %}
 ```javascript
 {
   // Response
 }
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
-{% swagger method="get" path="" baseUrl="{{base_url}}/api/sync/v1/contrats-get-all" summary="Récupère tous les contrats transmis" %}
-{% swagger-description %}
+## Récupère tous les contrats transmis
 
-{% endswagger-description %}
+<mark style="color:blue;">`GET`</mark> `{{base_url}}/api/sync/v1/contrats-get-all`
 
-{% swagger-response status="200: OK" description="" %}
+{% tabs %}
+{% tab title="200: OK " %}
 
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
-{% swagger method="delete" path="" baseUrl="{{base_url}}/api/sync/v1/contrats" summary="Supprimer tous les contrats" %}
-{% swagger-description %}
+## Simuler une synchronisation
+
+<mark style="color:red;">`POST`</mark> `{{base_url}}/api/sync/v1/`contrats-diff
+
+Cette route est une sorte de dry run sur l'intégration, elle va vous retourner un objet
+
+{% tabs %}
+{% tab title="200: OK " %}
+```javascript
+{
+    "same": [], // contrats similaires à la précédente synchro
+    "added": [], // nouveaux
+    "updated": [], // changements détectés
+    "removed": [] // contrats qui seront archivés
+}
+```
+{% endtab %}
+{% endtabs %}
+
+##
+
+## Supprimer tous les contrats
+
+<mark style="color:red;">`DELETE`</mark> `{{base_url}}/api/sync/v1/contrats`
+
 Attention cette route est a utiliser uniquement dans le bac à sable
-{% endswagger-description %}
 
-{% swagger-response status="200: OK" description="" %}
+{% tabs %}
+{% tab title="200: OK " %}
 ```javascript
 {
   // Response
 }
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
 #### Différence entre contrat transmis et intégré
 
 Un contrat transmis est une donnée que nous recevons via API
 
 Un contrat intégré est un contrat transmis que nous avons su associer à une session ( cela nécessite que l'équipe intégration a configuré les modèles )
-
-
