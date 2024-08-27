@@ -168,6 +168,10 @@ Info de démarrage du groupe permettant de gérer les rentrées décalées
 codeRNCP
 {% endswagger-parameter %}
 
+{% swagger-parameter in="body" name="contrats.$.type" required="false" type="string" %}
+Type de contrat : APPRENTICESHIP ou INTERNSHIP 
+{% endswagger-parameter %}
+
 {% swagger-response status="200" description="" %}
 ```
 ```
