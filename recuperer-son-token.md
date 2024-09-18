@@ -24,8 +24,11 @@ Sans ça vous aurez un retour du type
 {% endswagger-description %}
 
 {% swagger-response status="200" description="" %}
-```
-token valid
+```json
+{
+    "value": "token valid",
+    "name": "Nom de votre CFA sur la plateforme"
+}
 ```
 {% endswagger-response %}
 {% endswagger %}

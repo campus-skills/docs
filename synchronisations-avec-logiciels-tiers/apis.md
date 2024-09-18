@@ -46,7 +46,7 @@ Dans notre SI, un email est rattaché à un compte et un seul. Si deux tuteurs e
 
 | Name                                                                   | Type   | Description                                                                               |
 | ---------------------------------------------------------------------- | ------ | ----------------------------------------------------------------------------------------- |
-| contrats<mark style="color:red;">\*</mark>                             | array  | ​                                                                                         |
+| contrats<mark style="color:red;">\*</mark>                             | array  | ​                                                                                          |
 | contrats.$.dateFin                                                     | string | Date au format DD/MM/YYYY                                                                 |
 | contrats.$.dateDebut                                                   | string | Date au format DD/MM/YYYY                                                                 |
 | contrats.$.nomGroupe<mark style="color:red;">\*</mark>                 | string | Nom du groupe                                                                             |
@@ -77,7 +77,17 @@ Dans notre SI, un email est rattaché à un compte et un seul. Si deux tuteurs e
 | contrats.$.missionDetails                                              | string | Descriptif de la mission                                                                  |
 | contrats.$.monthStartGroup                                             | string | Info de démarrage du groupe permettant de gérer les rentrées décalées                     |
 | contrats.$.rncp                                                        | string | codeRNCP                                                                                  |
-```
+
+#### Response
+Retourne les contrats selon la même structure de donnees que celle envoyee dans le POST au dessus.
+
+{% tabs %}
+{% tab title="200: OK " %}
+```javascript
+{
+  "total": 1,
+  "contrats": []
+}
 ```
 {% endtab %}
 {% endtabs %}
@@ -86,13 +96,21 @@ Dans notre SI, un email est rattaché à un compte et un seul. Si deux tuteurs e
 
 <mark style="color:blue;">`GET`</mark> `{{base_url}}/api/sync/v1/contrats`
 
-Retourne les contrats selon la même structure de donnees que celle envoyee dans le POST au dessus
+#### Query Parameters
+Name | Type | Description
+--- | --- | ---
+limit | number | Nombre de contrats maximum à récupérer (optionnel)
+page | number | Numéro de la page à récupérer (optionnel)
+
+#### Response
+Retourne les contrats selon la même structure de donnees que celle envoyee dans le POST au dessus.
 
 {% tabs %}
 {% tab title="200: OK " %}
 ```javascript
 {
-  // Response
+  "total": 1,
+  "contrats": []
 }
 ```
 {% endtab %}
@@ -102,9 +120,23 @@ Retourne les contrats selon la même structure de donnees que celle envoyee dans
 
 <mark style="color:blue;">`GET`</mark> `{{base_url}}/api/sync/v1/contrats-get-all`
 
+#### Query Parameters
+Name | Type | Description
+--- | --- | ---
+limit | number | Nombre de contrats maximum à récupérer (optionnel)
+page | number | Numéro de la page à récupérer (optionnel)
+
+#### Response
+Retourne la même réponse que pour les contrats transmis au dessus.
+
 {% tabs %}
 {% tab title="200: OK " %}
-
+```javascript
+{
+  "total": 1,
+  "contrats": []
+}
+```
 {% endtab %}
 {% endtabs %}
 
@@ -112,7 +144,10 @@ Retourne les contrats selon la même structure de donnees que celle envoyee dans
 
 <mark style="color:red;">`POST`</mark> `{{base_url}}/api/sync/v1/`contrats-diff
 
-Cette route est une sorte de dry run sur l'intégration, elle va vous retourner un objet
+Cette route est une sorte de dry run sur l'intégration.
+
+#### Response
+Retourne un objet avec 4 tableaux de contrats.
 
 {% tabs %}
 {% tab title="200: OK " %}
@@ -127,7 +162,6 @@ Cette route est une sorte de dry run sur l'intégration, elle va vous retourner 
 {% endtab %}
 {% endtabs %}
 
-##
 
 ## Supprimer tous les contrats
 
