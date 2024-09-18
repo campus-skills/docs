@@ -16,6 +16,7 @@
 * [GestiBase](synchronisations-avec-logiciels-tiers/gestibase.md)
 * [Excel/CSV](synchronisations-avec-logiciels-tiers/csv.md)
 * [Nos APIs](synchronisations-avec-logiciels-tiers/apis.md)
+* [Connecteur Make](synchronisations-avec-logiciels-tiers/make.md)
 
 ## SSO
 
