@@ -79,7 +79,7 @@ Dans notre SI, un email est rattaché à un compte et un seul. Si deux tuteurs e
 | contrats.$.rncp                                                        | string | codeRNCP                                                                                  |
 
 #### Response
-Retourne les contrats selon la même structure de donnees que celle envoyee dans le POST au dessus.
+Retourne les contrats selon la même structure de données que celle envoyée dans le POST au dessus.
 
 {% tabs %}
 {% tab title="200: OK " %}
