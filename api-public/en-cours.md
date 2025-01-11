@@ -21,10 +21,7 @@ description: >-
 
 **Body**
 
-| Name          | Type   | Description                          |
-| ------------- | ------ | ------------------------------------ |
-| `groupId`     | string | code du groupe transmis précédemment |
-| `calendarUrl` | string | lien calendrier ics                  |
+<table><thead><tr><th width="274">Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>groupId</code></td><td>string</td><td>code du groupe transmis précédemment</td></tr><tr><td><code>calendarUrl</code></td><td>string</td><td>lien calendrier ics</td></tr></tbody></table>
 
 **Response**
 
@@ -86,4 +83,30 @@ description: >-
 {% endtab %}
 {% endtabs %}
 
-Toutes les données de notre application sont accessibles via APIs, nous les documentons au fur et à mesure de vos besoins.
+
+
+### Synchroniser les absences d'un apprenant
+
+<mark style="color:green;">`POST`</mark> `{{URL}}/api/v1/sync/absences-for-student`
+
+\<Description of the endpoint>
+
+**Headers**
+
+| Name          | Value              |
+| ------------- | ------------------ |
+| Content-Type  | `application/json` |
+| Authorization | `Bearer <token>`   |
+
+**Body**
+
+<table><thead><tr><th width="274">Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>studentId</code></td><td>string*</td><td>code du student transmis précédemment</td></tr><tr><td><code>data</code></td><td>array*</td><td>Liste d'absence</td></tr><tr><td>data.$.dateDebut</td><td>string*</td><td>Date de début</td></tr><tr><td>data.$.dateFin</td><td>string*</td><td>Date de fin</td></tr><tr><td>data.$.type</td><td>string*</td><td>type ( <code>absence</code>ou <code>retard</code>)</td></tr><tr><td>data.$.isJusitifie</td><td>boolean*</td><td></td></tr><tr><td>data.$.motif</td><td>string</td><td></td></tr></tbody></table>
+
+**Response**
+
+{% tabs %}
+{% tab title="200: OK " %}
+
+{% endtab %}
+{% endtabs %}
+
