@@ -6,11 +6,9 @@ description: >-
 
 # API Public
 
-&#x20;\## Synchroniser un calendrier de groupe au format ICS
+### &#x20;Synchroniser un calendrier de groupe au format ICS
 
 <mark style="color:green;">`POST`</mark> `{{URL}}/api/v1/sync/calendar-group-ics`
-
-\<Description of the endpoint>
 
 **Headers**
 
@@ -35,6 +33,8 @@ description: >-
 
 <mark style="color:blue;">`GET`</mark> `{{URL}}/api/v1/grades`
 
+
+
 #### Query Parameters
 
 | Name                                        | Type   | Description                         |
@@ -43,15 +43,14 @@ description: >-
 
 {% tabs %}
 {% tab title="200: OK " %}
-```json
-// La réponse sera de type et vous permet d'accéder à la moyenne globale et aussi à la moyenne par bloc
+<pre class="language-json"><code class="lang-json">// La réponse sera de type et vous permet d'accéder à la moyenne globale et aussi à la moyenne par bloc
 
 {
     "studentName": "Prénom nom de l'apprenant",
     "userId": "id dans le SI Campus skills",
     "sessions": [
-        "sessionId": "id de la session dans le SI Campus skills",
-	"sessionName": "nom de la session",
+<strong>        "sessionId": "id de la session dans le SI Campus skills",
+</strong>	"sessionName": "nom de la session",
 	"autoValidationMean": "Moyenne autoévaludation",
 	"validationMean": "Moyenne évaluation",
 	"companyValidationMean": "Moyenne validation tuteur entreprise",
@@ -79,17 +78,61 @@ description: >-
     ],
 
 }
-```
+</code></pre>
 {% endtab %}
 {% endtabs %}
+
+### Récupérer l'avancement des livrets pour une session
+
+<mark style="color:blue;">`GET`</mark> `{{URL}}/api/v1/`get-training-progress-by-students
+
+Headers
+
+| Name          | Value              |
+| ------------- | ------------------ |
+| Content-Type  | `application/json` |
+| Authorization | `Bearer <token>`   |
+
+#### Example Request
+
+```json
+{
+  "codeSchool": "identifiant de l'ecole précédemment transmis",
+}
+```
+
+```
+
+// La réponse sera un tableau des contrats des apprenants
+
+[
+    {
+        "_id": "j5LxLDrPPtu4GtHFj",
+        "studentName": "Agathe BATEAU",
+        "tutorName": "Eric VOITURE",
+        "tutorSchoolName": "Julie AVION",
+        "companyName": " APPLE",
+        "reports": [
+            {
+                "name": "Intégration en entreprise",
+                "reportDone": true,
+                "isLate": true,
+                "dateOfReport": "2023-09-27T00:00:00.000Z"
+            },
+         {
+                "name": "Attestation d'expérience au milieu professionnel",
+                "reportDone": false,
+                "isLate": false,
+                "dateOfReport": "2025-05-07T07:17:00.000Z"
+            },
+            ...
+```
 
 
 
 ### Synchroniser les absences d'un apprenant
 
 <mark style="color:green;">`POST`</mark> `{{URL}}/api/v1/sync/absences-for-student`
-
-\<Description of the endpoint>
 
 **Headers**
 
