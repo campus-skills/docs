@@ -37,9 +37,12 @@ description: >-
 
 #### Query Parameters
 
+Un des deux est obligatoire
+
 | Name                                        | Type   | Description                         |
 | ------------------------------------------- | ------ | ----------------------------------- |
 | studentId<mark style="color:red;">\*</mark> | String | L'id de l'utilisateur dans votre SI |
+| email                                       | String | L'email de l'utilisateur            |
 
 {% tabs %}
 {% tab title="200: OK " %}
