@@ -8,7 +8,7 @@ description: >-
 
 ### &#x20;Synchroniser un calendrier de groupe au format ICS
 
-<mark style="color:green;">`POST`</mark> `{{URL}}/api/v1/sync/calendar-group-ics`
+<mark style="color:green;">`POST`</mark> `{{URL}}/api/sync/v1/calendar-group-ics`
 
 **Headers**
 
@@ -135,7 +135,7 @@ Headers
 
 ### Synchroniser les absences d'un apprenant
 
-<mark style="color:green;">`POST`</mark> `{{URL}}/api/v1/sync/absences-for-student`
+<mark style="color:green;">`POST`</mark> `{{URL}}/api/sync/v1/absences-for-student`
 
 **Headers**
 
