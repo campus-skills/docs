@@ -146,7 +146,7 @@ Headers
 
 **Body**
 
-<table><thead><tr><th width="274">Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>email</code></td><td>string*</td><td>email de l'apprenant</td></tr><tr><td><code>data</code></td><td>array*</td><td>Liste d'absence</td></tr><tr><td>data.$.dateDebut</td><td>string*</td><td>Date de début</td></tr><tr><td>data.$.dateFin</td><td>string*</td><td>Date de fin</td></tr><tr><td>data.$.type</td><td>string*</td><td>type ( <code>absence</code>ou <code>retard</code>)</td></tr><tr><td>data.$.isJusitifie</td><td>boolean*</td><td></td></tr><tr><td>data.$.motif</td><td>string</td><td></td></tr></tbody></table>
+<table><thead><tr><th width="274">Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>email</code></td><td>string*</td><td>email de l'apprenant</td></tr><tr><td><code>data</code></td><td>array*</td><td>Liste d'absence</td></tr><tr><td>data.$.dateDebut</td><td>string*</td><td>Date de début au format DD/MM/YYYY-HH:mm</td></tr><tr><td>data.$.dateFin</td><td>string*</td><td>Date de fin - Date de début au format DD/MM/YYYY-HH:mm</td></tr><tr><td>data.$.type</td><td>string*</td><td>type ( <code>absence</code>ou <code>retard</code>)</td></tr><tr><td>data.$.isJusitifie</td><td>boolean*</td><td></td></tr><tr><td>data.$.motif</td><td>string</td><td></td></tr></tbody></table>
 
 **Response**
 
