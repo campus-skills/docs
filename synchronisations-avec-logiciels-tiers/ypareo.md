@@ -1,6 +1,6 @@
 # Ypareo
 
-[L'ERP Ypareo](https://www.ymag.fr/nos-offres-logicielles/ypareo-erp-de-gestion-de-centre-de-formation) de l'éditeur YMAG est un logiciel métier dédié à la gestion de l'activité de formation des organismes. Il permet d'assurer une gestion totale des processus mis en place au sein d'un établissement de formation. Il est simple, modulable et évolutif et s'inscrit donc dans la dynamique que nous suivons chez Campus Skills.
+[L'ERP Ypareo](https://www.ymag.fr/erp-formation-ypareo) de l'éditeur YMAG est un logiciel métier dédié à la gestion de l'activité de formation des organismes. Il permet d'assurer une gestion totale des processus mis en place au sein d'un établissement de formation. Il est simple, modulable et évolutif et s'inscrit donc dans la dynamique que nous suivons chez Campus Skills.
 
 Pour pouvoir faire l'intégration nous aurons besoin de votre clef d'API basic de YPareo uniquement ( nous ne faisons que lire des données ).
 
