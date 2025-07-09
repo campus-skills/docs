@@ -87,7 +87,7 @@ Un des deux est obligatoire
 
 ### Récupérer l'avancement des livrets pour une session
 
-<mark style="color:blue;">`GET`</mark> `{{URL}}/api/v1/`get-training-progress-by-students
+<mark style="color:blue;">`GET`</mark> `{{URL}}/api/v1/get-training-progress-by-students`
 
 Headers
 
