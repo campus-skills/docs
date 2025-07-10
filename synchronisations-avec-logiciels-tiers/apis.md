@@ -8,7 +8,7 @@ description: >-
 
 Pour synchroniser les données de votre logiciel vers le notre, nous vous proposons d'utiliser directement l'API REST
 
-### Structure de données
+## Structure de données
 
 Au sein de Campus Skills la structure des données peut être décrite ainsi :
 
@@ -24,7 +24,7 @@ Cela vous permettra d'avoir un suivi clair.
 
 Ainsi en plus des données sur le contrat, nous vous demandons d'ajouter des informations supplémentaires
 
-#### Unicité des ids
+### Unicité des ids
 
 Attention dans les données à synchroniser nous vous demandons de spécifier les identifiants de vos utilisateurs, ces identifiants doivent être uniques quelque soit la collection.
 
@@ -32,13 +32,19 @@ Par exemple si un etudiant a le même identifiant qu'un maitre d'apprentissage, 
 
 Si vous avez des tables différentes en fonction des rôles et donc potentiellement des conflits d'ids entre ces tables, merci de prédixer les identifiant envoyés.
 
-#### Unicité des emails
+### Unicité des emails
 
 Dans notre SI, un email est rattaché à un compte et un seul. Si deux tuteurs entreprises ont le même mail, vous ne pourrez pas synchroniser les données
 
-## Synchronisation via API REST
+### Différence entre contrat transmis et intégré
+
+Un contrat transmis est une donnée que nous recevons via API
+
+Un contrat intégré est un contrat transmis que nous avons su associer à une session ( cela nécessite que l'équipe intégration a configuré les modèles )
 
 ## Synchroniser les contrats
+
+### Nous envoyer les contrats
 
 <mark style="color:green;">`POST`</mark> `{{base_url}}/api/sync/v1/contrats`
 
@@ -46,7 +52,7 @@ Dans notre SI, un email est rattaché à un compte et un seul. Si deux tuteurs e
 
 | Name                                                                   | Type   | Description                                                                               |
 | ---------------------------------------------------------------------- | ------ | ----------------------------------------------------------------------------------------- |
-| contrats<mark style="color:red;">\*</mark>                             | array  | ​                                                                                          |
+| contrats<mark style="color:red;">\*</mark>                             | array  | ​                                                                                         |
 | contrats.$.dateFin                                                     | string | Date au format DD/MM/YYYY                                                                 |
 | contrats.$.dateDebut                                                   | string | Date au format DD/MM/YYYY                                                                 |
 | contrats.$.nomGroupe<mark style="color:red;">\*</mark>                 | string | Nom du groupe                                                                             |
@@ -79,6 +85,7 @@ Dans notre SI, un email est rattaché à un compte et un seul. Si deux tuteurs e
 | contrats.$.rncp                                                        | string | codeRNCP                                                                                  |
 
 #### Response
+
 Retourne les contrats selon la même structure de données que celle envoyée dans le POST au dessus.
 
 {% tabs %}
@@ -92,17 +99,19 @@ Retourne les contrats selon la même structure de données que celle envoyée da
 {% endtab %}
 {% endtabs %}
 
-## Récupère tous les contrats intégrés
+### Récupérer tous les contrats intégrés
 
 <mark style="color:blue;">`GET`</mark> `{{base_url}}/api/sync/v1/contrats`
 
 #### Query Parameters
-Name | Type | Description
---- | --- | ---
-limit | number | Nombre de contrats maximum à récupérer (optionnel)
-page | number | Numéro de la page à récupérer (optionnel)
+
+| Name  | Type   | Description                                        |
+| ----- | ------ | -------------------------------------------------- |
+| limit | number | Nombre de contrats maximum à récupérer (optionnel) |
+| page  | number | Numéro de la page à récupérer (optionnel)          |
 
 #### Response
+
 Retourne les contrats selon la même structure de donnees que celle envoyee dans le POST au dessus.
 
 {% tabs %}
@@ -116,17 +125,19 @@ Retourne les contrats selon la même structure de donnees que celle envoyee dans
 {% endtab %}
 {% endtabs %}
 
-## Récupère tous les contrats transmis
+### Récupérer tous les contrats transmis
 
 <mark style="color:blue;">`GET`</mark> `{{base_url}}/api/sync/v1/contrats-get-all`
 
 #### Query Parameters
-Name | Type | Description
---- | --- | ---
-limit | number | Nombre de contrats maximum à récupérer (optionnel)
-page | number | Numéro de la page à récupérer (optionnel)
+
+| Name  | Type   | Description                                        |
+| ----- | ------ | -------------------------------------------------- |
+| limit | number | Nombre de contrats maximum à récupérer (optionnel) |
+| page  | number | Numéro de la page à récupérer (optionnel)          |
 
 #### Response
+
 Retourne la même réponse que pour les contrats transmis au dessus.
 
 {% tabs %}
@@ -140,13 +151,14 @@ Retourne la même réponse que pour les contrats transmis au dessus.
 {% endtab %}
 {% endtabs %}
 
-## Simuler une synchronisation
+### Simuler une synchronisation
 
 <mark style="color:red;">`POST`</mark> `{{base_url}}/api/sync/v1/`contrats-diff
 
 Cette route est une sorte de dry run sur l'intégration.
 
 #### Response
+
 Retourne un objet avec 4 tableaux de contrats.
 
 {% tabs %}
@@ -162,8 +174,7 @@ Retourne un objet avec 4 tableaux de contrats.
 {% endtab %}
 {% endtabs %}
 
-
-## Supprimer tous les contrats
+### Supprimer tous les contrats
 
 <mark style="color:red;">`DELETE`</mark> `{{base_url}}/api/sync/v1/contrats`
 
@@ -179,8 +190,50 @@ Attention cette route est a utiliser uniquement dans le bac à sable
 {% endtab %}
 {% endtabs %}
 
-#### Différence entre contrat transmis et intégré
 
-Un contrat transmis est une donnée que nous recevons via API
 
-Un contrat intégré est un contrat transmis que nous avons su associer à une session ( cela nécessite que l'équipe intégration a configuré les modèles )
+## Synchroniser un calendrier de groupe au format ICS
+
+<mark style="color:green;">`POST`</mark> `{{URL}}/api/sync/v1/calendar-group-ics`
+
+**Headers**
+
+| Name          | Value              |
+| ------------- | ------------------ |
+| Content-Type  | `application/json` |
+| Authorization | `Bearer <token>`   |
+
+**Body**
+
+<table><thead><tr><th width="274">Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>groupId</code></td><td>string</td><td>code du groupe transmis précédemment</td></tr><tr><td><code>calendarUrl</code></td><td>string</td><td>lien calendrier ics</td></tr></tbody></table>
+
+**Response**
+
+{% tabs %}
+{% tab title="200: OK " %}
+
+{% endtab %}
+{% endtabs %}
+
+## Synchroniser les absences d'un apprenant
+
+<mark style="color:green;">`POST`</mark> `{{URL}}/api/sync/v1/absences-for-student`
+
+**Headers**
+
+| Name          | Value              |
+| ------------- | ------------------ |
+| Content-Type  | `application/json` |
+| Authorization | `Bearer <token>`   |
+
+**Body**
+
+<table><thead><tr><th width="274">Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>email</code></td><td>string*</td><td>email de l'apprenant</td></tr><tr><td><code>data</code></td><td>array*</td><td>Liste d'absence</td></tr><tr><td>data.$.dateDebut</td><td>string*</td><td>Date de début au format DD/MM/YYYY-HH:mm</td></tr><tr><td>data.$.dateFin</td><td>string*</td><td>Date de fin - Date de début au format DD/MM/YYYY-HH:mm</td></tr><tr><td>data.$.type</td><td>string*</td><td>type ( <code>absence</code>ou <code>retard</code>)</td></tr><tr><td>data.$.isJusitifie</td><td>boolean*</td><td></td></tr><tr><td>data.$.motif</td><td>string</td><td></td></tr></tbody></table>
+
+**Response**
+
+{% tabs %}
+{% tab title="200: OK " %}
+
+{% endtab %}
+{% endtabs %}
