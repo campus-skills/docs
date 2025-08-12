@@ -13,10 +13,11 @@ Pour synchroniser les données de votre logiciel vers le notre, nous vous propos
 Au sein de Campus Skills la structure des données peut être décrite ainsi :
 
 * Votre organisme peut être déployé dans plusieurs villes nous appelons ça des **sites**
+* (optionnel) Chaque site peut avoir plusieurs **marques**
 * Il y a des **périodes** de formation qui correspondent classiquement aux années scolaires ( 2020/2021, 2021/2022 etc )
 * Il y a des **programmes** de formations ( BTS MCO, Licence RH ) qui sont déployés sur un site et sur une période.
 * Il y a des **années** de formation ( Licence RH 1ière année, License RH 2ième année etc.. )
-* Et il y a des **groupes** qui correspondent à des sessions de formations.
+* Et il y a des **groupes** qui correspondent à des sessions de formation.
 
 Nous voulons avec cette structure regrouper les apprenants qui suivent la même formation sur le même site pour la même période donnée et la même année.
 
@@ -77,6 +78,8 @@ Un contrat intégré est un contrat transmis que nous avons su associer à une s
 | contrats.$.nomFormation<mark style="color:red;">\*</mark>              | string | Le nom de la formation                                                                    |
 | contrats.$.codeSite<mark style="color:red;">\*</mark>                  | string | Identifiant du site ( le couple codeSite, nomSite doit être unique )                      |
 | contrats.$.nomSite<mark style="color:red;">\*</mark>                   | string | Nom du site                                                                               |
+| contrats.$.codeMarque                                                  | string | Code de la marque                                                                         |
+| contrats.$.nomMarque                                                   | string | Nom de la marque                                                                          |
 | contrats.$.codeAnnee<mark style="color:red;">\*</mark>                 | string | Identifiant de l'année ( le couple codeAnnee, nomAnnee doit être unique )                 |
 | contrats.$.nomAnnee<mark style="color:red;">\*</mark>                  | string | Nom de l'année                                                                            |
 | contrats.$.missionTitle                                                | string | Titre de la mission                                                                       |
