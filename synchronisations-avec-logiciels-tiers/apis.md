@@ -47,7 +47,7 @@ Un contrat intégré est un contrat transmis que nous avons su associer à une s
 
 ### Nous envoyer les contrats
 
-<mark style="color:green;">`POST`</mark> `{{base_url}}/api/sync/v1/contrats`
+<mark style="color:green;">`POST`</mark> `{{base_url}}/api/sync/v2/contrats`
 
 #### Request Body
 
