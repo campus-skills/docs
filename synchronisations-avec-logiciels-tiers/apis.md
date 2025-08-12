@@ -51,41 +51,42 @@ Un contrat intégré est un contrat transmis que nous avons su associer à une s
 
 #### Request Body
 
-| Name                                                                   | Type   | Description                                                                               |
-| ---------------------------------------------------------------------- | ------ | ----------------------------------------------------------------------------------------- |
-| contrats<mark style="color:red;">\*</mark>                             | array  | ​                                                                                         |
-| contrats.$.dateFin                                                     | string | Date au format DD/MM/YYYY                                                                 |
-| contrats.$.dateDebut                                                   | string | Date au format DD/MM/YYYY                                                                 |
-| contrats.$.nomGroupe<mark style="color:red;">\*</mark>                 | string | Nom du groupe                                                                             |
-| contrats.$.nomEntreprise<mark style="color:red;">\*</mark>             | string | Nom de l'entreprise                                                                       |
-| contrats.$.emailPersonnel<mark style="color:red;">\*</mark>            | string | Email du tuteur école                                                                     |
-| contrats.$.prenomPersonnel<mark style="color:red;">\*</mark>           | string | Prénom du tuteur école                                                                    |
-| contrats.$.nomPersonnel<mark style="color:red;">\*</mark>              | string | Nom du tuteur école                                                                       |
-| contrats.$.codePersonnel<mark style="color:red;">\*</mark>             | string | Code du tuteur école, doit être unique parmi tous les utilisateurs                        |
-| contrats.$.emailMaitreApprentissage<mark style="color:red;">\*</mark>  | string | Email maitre apprentissage                                                                |
-| contrats.$.prenomMaitreApprentissage<mark style="color:red;">\*</mark> | string | Prenom maitre apprentissage                                                               |
-| contrats.$.nomMaitreApprentissage<mark style="color:red;">\*</mark>    | string | Nom maitre apprentissage                                                                  |
-| contrats.$.codeMaitreApprentissage<mark style="color:red;">\*</mark>   | string | Identifiant du maitre apprentissage, doit être unique parmi tous les utilisateurs         |
-| contrats.$.nomApprenant<mark style="color:red;">\*</mark>              | string | Nom de l'apprenant                                                                        |
-| contrats.$.emailApprenant<mark style="color:red;">\*</mark>            | string | email de l'apprenant                                                                      |
-| contrats.$.prenomApprenant<mark style="color:red;">\*</mark>           | string | Prenom de l'apprenant                                                                     |
-| contrats.$.codeApprenant<mark style="color:red;">\*</mark>             | string | Identifiant de l'apprenant, doit être unique parmi tous les utilisateurs                  |
-| contrats.$.codeGroupe<mark style="color:red;">\*</mark>                | string | L'identifiant unique du groupe de l'apprenant                                             |
-| contrats.$.codeContrat<mark style="color:red;">\*</mark>               | string | L'identifiant unique du contrat                                                           |
-| contrats.$.codePeriode<mark style="color:red;">\*</mark>               | string | Identifiant de la période associée ( le couple codePeriode, nomPeriode doit être unique ) |
-| contrats.$.nomPeriode<mark style="color:red;">\*</mark>                | string | Nom de la période                                                                         |
-| contrats.$.codeFormation<mark style="color:red;">\*</mark>             | string | Identifiant de la formation ( le couple codeFormation, nomFormation doit être unique )    |
-| contrats.$.nomFormation<mark style="color:red;">\*</mark>              | string | Le nom de la formation                                                                    |
-| contrats.$.codeSite<mark style="color:red;">\*</mark>                  | string | Identifiant du site ( le couple codeSite, nomSite doit être unique )                      |
-| contrats.$.nomSite<mark style="color:red;">\*</mark>                   | string | Nom du site                                                                               |
-| contrats.$.codeMarque                                                  | string | Code de la marque                                                                         |
-| contrats.$.nomMarque                                                   | string | Nom de la marque                                                                          |
-| contrats.$.codeAnnee<mark style="color:red;">\*</mark>                 | string | Identifiant de l'année ( le couple codeAnnee, nomAnnee doit être unique )                 |
-| contrats.$.nomAnnee<mark style="color:red;">\*</mark>                  | string | Nom de l'année                                                                            |
-| contrats.$.missionTitle                                                | string | Titre de la mission                                                                       |
-| contrats.$.missionDetails                                              | string | Descriptif de la mission                                                                  |
-| contrats.$.monthStartGroup                                             | string | Info de démarrage du groupe permettant de gérer les rentrées décalées                     |
-| contrats.$.rncp                                                        | string | codeRNCP                                                                                  |
+<table><thead><tr><th width="251.3096923828125">Name</th><th width="86.03125">Type</th><th>Description</th></tr></thead><tbody><tr><td>contrats<mark style="color:red;">*</mark></td><td>array</td><td>​</td></tr><tr><td>contrats.$.dateFin</td><td>string</td><td>Date au format DD/MM/YYYY</td></tr><tr><td>contrats.$.dateDebut</td><td>string</td><td>Date au format DD/MM/YYYY</td></tr><tr><td>contrats.$.nomGroupe<mark style="color:red;">*</mark></td><td>string</td><td>Nom du groupe</td></tr><tr><td>contrats.$.nomEntreprise<mark style="color:red;">*</mark></td><td>string</td><td>Nom de l'entreprise</td></tr><tr><td>contrats.$.emailPersonnel<mark style="color:red;">*</mark></td><td>string</td><td>Email du tuteur école</td></tr><tr><td>contrats.$.prenomPersonnel<mark style="color:red;">*</mark></td><td>string</td><td>Prénom du tuteur école</td></tr><tr><td>contrats.$.nomPersonnel<mark style="color:red;">*</mark></td><td>string</td><td>Nom du tuteur école</td></tr><tr><td>contrats.$.codePersonnel<mark style="color:red;">*</mark></td><td>string</td><td>Code du tuteur école, doit être unique parmi tous les utilisateurs</td></tr><tr><td>contrats.$.emailMaitreApprentissage<mark style="color:red;">*</mark></td><td>string</td><td>Email maitre apprentissage</td></tr><tr><td>contrats.$.prenomMaitreApprentissage<mark style="color:red;">*</mark></td><td>string</td><td>Prenom maitre apprentissage</td></tr><tr><td>contrats.$.nomMaitreApprentissage<mark style="color:red;">*</mark></td><td>string</td><td>Nom maitre apprentissage</td></tr><tr><td>contrats.$.codeMaitreApprentissage<mark style="color:red;">*</mark></td><td>string</td><td>Identifiant du maitre apprentissage, doit être unique parmi tous les utilisateurs</td></tr><tr><td>contrats.$.nomApprenant<mark style="color:red;">*</mark></td><td>string</td><td>Nom de l'apprenant</td></tr><tr><td>contrats.$.emailApprenant<mark style="color:red;">*</mark></td><td>string</td><td>email de l'apprenant</td></tr><tr><td>contrats.$.prenomApprenant<mark style="color:red;">*</mark></td><td>string</td><td>Prenom de l'apprenant</td></tr><tr><td>contrats.$.codeApprenant<mark style="color:red;">*</mark></td><td>string</td><td>Identifiant de l'apprenant, doit être unique parmi tous les utilisateurs</td></tr><tr><td>contrats.$.codeGroupe<mark style="color:red;">*</mark></td><td>string</td><td>L'identifiant unique du groupe de l'apprenant</td></tr><tr><td>contrats.$.codeContrat<mark style="color:red;">*</mark></td><td>string</td><td>L'identifiant unique du contrat</td></tr><tr><td>contrats.$.codePeriode<mark style="color:red;">*</mark></td><td>string</td><td>Identifiant de la période associée ( le couple codePeriode, nomPeriode doit être unique )</td></tr><tr><td>contrats.$.nomPeriode<mark style="color:red;">*</mark></td><td>string</td><td>Nom de la période</td></tr><tr><td>contrats.$.codeFormation<mark style="color:red;">*</mark></td><td>string</td><td>Identifiant de la formation ( le couple codeFormation, nomFormation doit être unique )</td></tr><tr><td>contrats.$.nomFormation<mark style="color:red;">*</mark></td><td>string</td><td>Le nom de la formation</td></tr><tr><td>contrats.$.codeSite<mark style="color:red;">*</mark></td><td>string</td><td>Identifiant du site ( le couple codeSite, nomSite doit être unique )</td></tr><tr><td>contrats.$.nomSite<mark style="color:red;">*</mark></td><td>string</td><td>Nom du site</td></tr><tr><td>contrats.$.codeMarque</td><td>string</td><td>Code de la marque</td></tr><tr><td>contrats.$.nomMarque</td><td>string</td><td>Nom de la marque</td></tr><tr><td>contrats.$.codeAnnee<mark style="color:red;">*</mark></td><td>string</td><td>Identifiant de l'année ( le couple codeAnnee, nomAnnee doit être unique )</td></tr><tr><td>contrats.$.nomAnnee<mark style="color:red;">*</mark></td><td>string</td><td>Nom de l'année</td></tr><tr><td>contrats.$.missionTitle</td><td>string</td><td>Titre de la mission</td></tr><tr><td>contrats.$.missionDetails</td><td>string</td><td>Descriptif de la mission</td></tr><tr><td>contrats.$.monthStartGroup</td><td>string</td><td>Info de démarrage du groupe permettant de gérer les rentrées décalées</td></tr><tr><td>contrats.$.rncp</td><td>string</td><td>codeRNCP</td></tr></tbody></table>
+
+#### Exemple
+
+```json
+[
+    {
+        codeContrat: "1234",
+        dateDebut: "01/09/2025",
+        dateFin: "30/06/2026",
+        nomEntreprise: "Auchan",
+        codeGroupe: "Groupe1",
+        nomGroupe: "BTS MCO Rennes 1ère année",
+        codeSite: "Site1",
+        nomSite: "Rennes",
+        codePeriode: "Periode1",
+        nomPeriode: "2025/2026",
+        codeAnnee: "Annee1",
+        nomAnnee: "1ère année",
+        codeFormation: "BTSMCO",
+        nomFormation: "BTS MCO",
+        codeApprenant: "Apprenant1",
+        prenomApprenant: "Prénom apprenant"
+        nomApprenant: "Nom apprenant",
+        emailApprenant: "apprenant@email.com",
+        codePersonnel: "Personnel1",
+        prenomPersonnel: "Prénom personnel"
+        nomPersonnel: "Nom personnel",
+        emailPersonnel: "personnel@email.com",
+        codeMaitreApprentissage: "MaitreApprentissage1",
+        prenomMaitreApprentissage: "Prénom MaitreApprentissage"
+        nomMaitreApprentissage: "Nom MaitreApprentissage",
+        emailMaitreApprentissage: "MaitreApprentissage@email.com",
+    }
+]
+```
 
 #### Response
 
