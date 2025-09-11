@@ -233,9 +233,35 @@ Attention cette route est a utiliser uniquement dans le bac à sable
 | Content-Type  | `application/json` |
 | Authorization | `Bearer <token>`   |
 
-**Body**
+**Body (format JSON)**
+
+La syntaxe "$" indique un sous champ de l'objet (cf exemple plus bas)
 
 <table><thead><tr><th width="274">Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>email</code></td><td>string*</td><td>email de l'apprenant</td></tr><tr><td><code>data</code></td><td>array*</td><td>Liste d'absence</td></tr><tr><td>data.$.dateDebut</td><td>string*</td><td>Date de début au format DD/MM/YYYY-HH:mm</td></tr><tr><td>data.$.dateFin</td><td>string*</td><td>Date de fin - Date de début au format DD/MM/YYYY-HH:mm</td></tr><tr><td>data.$.type</td><td>string*</td><td>type ( <code>absence</code>ou <code>retard</code>)</td></tr><tr><td>data.$.isJusitifie</td><td>boolean*</td><td></td></tr><tr><td>data.$.motif</td><td>string</td><td></td></tr></tbody></table>
+
+**Exemple**
+
+```json
+{
+   "email": "apprenant@ecole.fr",
+   "data": [
+        {
+            "dateDebut": "08/09/2025-9:00",
+            "dateFin": "08/09/2025-17:00",
+            "type": "absence",
+            "isJusitifie": true,
+            "motif": "maladie"
+         },
+         {
+            "dateDebut": "10/09/2025-14:00",
+            "dateFin": "10/09/2025-15:00",
+            "type": "absence",
+            "isJusitifie": false,
+            "motif": ""
+         }
+    ]
+]
+```
 
 **Response**
 
