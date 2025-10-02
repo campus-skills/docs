@@ -226,6 +226,11 @@ Attention cette route est a utiliser uniquement dans le bac à sable
 
 <mark style="color:green;">`POST`</mark> `{{URL}}/api/sync/v1/absences-for-student`
 
+Utilisez cet endpoint pour envoyer les absences d'un apprenant, qui seront affichées dans l'onget Absences / Retard sur Campus Skills.&#x20;
+
+Il est important d'envoyer l'intégralité des absences que vous souhaitez rendre visible dans l'onglet.\
+Concrètement, si vous envoyez d'abord une première absence, puis plus tard une deuxième, il faudra lors du deuxième appel envoyer les deux absences. Si vous n'envoyez que la deuxième, la première n'apparaitra plus.
+
 **Headers**
 
 | Name          | Value              |
