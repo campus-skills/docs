@@ -1,0 +1,44 @@
+site_name: Documentation Ypareo Skills
+site_url: https://docs.campus-skills.com/
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: material
+  language: fr
+  palette:
+    - scheme: default
+      primary: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Basculer en mode sombre
+    - scheme: slate
+      primary: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Basculer en mode clair
+  features:
+    - navigation.tabs
+    - navigation.top
+    - content.code.copy
+    - search.suggest
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - tables
+  - fenced_code
+  - attr_list
+
+nav:
+  - Bienvenue: README.md
+  - API publique:
+      - Utilisation de l'API: api-public/how-to-use.md
+      - Routes d'API: api-public/api-routes.md
+      - Lien sans mot de passe: api-public/passwordLess.md
+      - Synchronisation des contrats: api-public/contracts.md
+      - Connecteur Make: api-public/make.md
+  - SSO:
+      - SSO: misc/sso.md
+  - Marque blanche:
+      - Marque blanche: misc/whitebrand.md

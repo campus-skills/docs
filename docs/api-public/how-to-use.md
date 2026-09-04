@@ -22,25 +22,23 @@ Ce token est strictement confidentiel et vous permettra de récupérer les donn�
 }
 ```
 
-Sans ça vous aurez un retour du type 
+Sans ça vous aurez un retour du type
 
-{% hint style="danger" %}
-{ "error": "UNAUTHORIZED", "reason": "Vous n'êtes pas autorisé à effectuer cette action." }
-{% endhint %}
+!!! danger
+
+    ```
+    { "error": "UNAUTHORIZED", "reason": "Vous n'êtes pas autorisé à effectuer cette action." }
+    ```
 
 ### Tester son token
 
-{% swagger baseUrl="{{URL}}/api/sync/v1/test" path="" method="get" summary="" %}
-{% swagger-description %}
+`GET` `{{URL}}/api/sync/v1/test`
 
-{% endswagger-description %}
+**Réponse `200`**
 
-{% swagger-response status="200" description="" %}
 ```json
 {
     "value": "token valid",
     "name": "Nom de votre compte sur la plateforme"
 }
 ```
-{% endswagger-response %}
-{% endswagger %}

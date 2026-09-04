@@ -9,7 +9,7 @@ La connexion SSO peut être activée pour tout ou partie de vos utilisateurs. Pa
 1. L'utilisateur clique sur le bouton de connexion SSO sur la page de login.
 2. Il est redirigé vers votre fournisseur d'identité (IdP) pour s'y authentifier.
 3. Une fois authentifié, votre IdP renvoie une réponse SAML à Ypareo Skills.
-4. Ypareo Skills retrouve l'utilisateur correspondant **par email** (voir [Résolution de l'utilisateur](#résolution-de-lutilisateur)) et le connecte automatiquement.
+4. Ypareo Skills retrouve l'utilisateur correspondant **par email** (voir [Résolution de l'utilisateur](#resolution-de-lutilisateur)) et le connecte automatiquement.
 
 ## Mise en place
 
@@ -49,6 +49,6 @@ Ypareo Skills retrouve l'utilisateur à partir de son adresse email, qui doit co
 
 Le plus simple est donc de configurer directement le NameID de votre IdP au format email : aucun mapping d'attribut supplémentaire n'est alors nécessaire.
 
-{% hint style="warning" %}
-La connexion SSO ne crée pas automatiquement de compte utilisateur. Assurez-vous que les comptes de vos utilisateurs existent déjà dans Ypareo Skills (import, création manuelle, synchronisation...) avant d'activer le SSO. Un utilisateur dont l'email ne correspond à aucun compte existant ne pourra pas se connecter.
-{% endhint %}
+!!! warning
+
+    La connexion SSO ne crée pas automatiquement de compte utilisateur. Assurez-vous que les comptes de vos utilisateurs existent déjà dans Ypareo Skills (import, création manuelle, synchronisation...) avant d'activer le SSO. Un utilisateur dont l'email ne correspond à aucun compte existant ne pourra pas se connecter.

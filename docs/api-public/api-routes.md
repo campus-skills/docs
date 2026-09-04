@@ -2,20 +2,19 @@
 
 ## Récupérer les notes et les validations de compétences d'un apprenant
 
-{% swagger method="get" path="" baseUrl="{{URL}}/api/v1/grades" summary="Récupérer les notes et les validations de compétences d'un apprenant" %}
-{% swagger-description %}
+`GET` `{{URL}}/api/v1/grades`
+
 Un des deux paramètres (`studentId` ou `email`) est obligatoire.
-{% endswagger-description %}
 
-{% swagger-parameter in="query" name="studentId" required="false" %}
-L'id de l'utilisateur dans votre SI
-{% endswagger-parameter %}
+**Paramètres**
 
-{% swagger-parameter in="query" name="email" required="false" %}
-L'email de l'utilisateur
-{% endswagger-parameter %}
+| In | Nom | Requis | Description |
+|---|---|---|---|
+| query | `studentId` | non | L'id de l'utilisateur dans votre SI |
+| query | `email` | non | L'email de l'utilisateur |
 
-{% swagger-response status="200: OK" description="La réponse vous permet d'accéder à la moyenne globale et aussi à la moyenne par bloc" %}
+**Réponse `200: OK`** — La réponse vous permet d'accéder à la moyenne globale et aussi à la moyenne par bloc
+
 ```json
 {
     "studentName": "Prénom nom de l'apprenant",
@@ -54,25 +53,22 @@ L'email de l'utilisateur
     ]
 }
 ```
-{% endswagger-response %}
-{% endswagger %}
 
 ## Récupérer l'avancement des livrets pour une session
 
-{% swagger method="get" path="" baseUrl="{{URL}}/api/sync/v1/get-training-progress-by-students" summary="Récupérer l'avancement des livrets pour une session" %}
-{% swagger-description %}
+`GET` `{{URL}}/api/sync/v1/get-training-progress-by-students`
+
 Un des deux paramètres (`studentId` ou `email`) est obligatoire.
-{% endswagger-description %}
 
-{% swagger-parameter in="query" name="studentId" required="false" %}
-L'id de l'utilisateur dans votre SI
-{% endswagger-parameter %}
+**Paramètres**
 
-{% swagger-parameter in="query" name="email" required="false" %}
-L'email de l'utilisateur
-{% endswagger-parameter %}
+| In | Nom | Requis | Description |
+|---|---|---|---|
+| query | `studentId` | non | L'id de l'utilisateur dans votre SI |
+| query | `email` | non | L'email de l'utilisateur |
 
-{% swagger-response status="200: OK" description="La réponse est un tableau des contrats des apprenants" %}
+**Réponse `200: OK`** — La réponse est un tableau des contrats des apprenants
+
 ```json
 [
     {
@@ -100,71 +96,44 @@ L'email de l'utilisateur
     // ... un objet par apprenant de la session
 ]
 ```
-{% endswagger-response %}
-{% endswagger %}
 
 ## Synchroniser un calendrier de groupe au format ICS
 
-{% swagger method="post" path="" baseUrl="{{URL}}/api/sync/v1/calendar-group-ics" summary="Synchroniser un calendrier de groupe au format ICS" %}
-{% swagger-description %}
+`POST` `{{URL}}/api/sync/v1/calendar-group-ics`
 
-{% endswagger-description %}
+**Paramètres**
 
-{% swagger-parameter in="body" name="groupId" required="true" type="string" %}
-Code du groupe transmis précédemment
-{% endswagger-parameter %}
+| In | Nom | Requis | Type | Description |
+|---|---|---|---|---|
+| body | `groupId` | oui | string | Code du groupe transmis précédemment |
+| body | `calendarUrl` | oui | string | Lien calendrier ics |
 
-{% swagger-parameter in="body" name="calendarUrl" required="true" type="string" %}
-Lien calendrier ics
-{% endswagger-parameter %}
-
-{% swagger-response status="200: OK" %}
-{% endswagger-response %}
-{% endswagger %}
+**Réponse `200: OK`**
 
 ## Synchroniser les absences d'un apprenant
 
 Utilisez cet endpoint pour envoyer les absences d'un apprenant, qui seront affichées dans l'onglet Absences / Retard sur Ypareo Skills.
 
-Il est important d'envoyer l'intégralité des absences que vous souhaitez rendre visible dans l'onglet.\
+Il est important d'envoyer l'intégralité des absences que vous souhaitez rendre visible dans l'onglet.
 Concrètement, si vous envoyez d'abord une première absence, puis plus tard une deuxième, il faudra lors du deuxième appel envoyer les deux absences. Si vous n'envoyez que la deuxième, la première n'apparaitra plus.
 
-{% swagger method="post" path="" baseUrl="{{URL}}/api/sync/v1/absences-for-student" summary="Synchroniser les absences d'un apprenant" %}
-{% swagger-description %}
+`POST` `{{URL}}/api/sync/v1/absences-for-student`
+
 La syntaxe "$" indique un sous champ de l'objet (cf exemple plus bas).
-{% endswagger-description %}
 
-{% swagger-parameter in="body" name="email" required="true" type="string" %}
-Email de l'apprenant
-{% endswagger-parameter %}
+**Paramètres**
 
-{% swagger-parameter in="body" name="data" required="true" type="array" %}
-Liste d'absences
-{% endswagger-parameter %}
+| In | Nom | Requis | Type | Description |
+|---|---|---|---|---|
+| body | `email` | oui | string | Email de l'apprenant |
+| body | `data` | oui | array | Liste d'absences |
+| body | `data.$.dateStart` | oui | string | Date de début au format DD/MM/YYYY-HH:mm |
+| body | `data.$.dateEnd` | oui | string | Date de fin au format DD/MM/YYYY-HH:mm |
+| body | `data.$.type` | oui | string | `absence` ou `retard` |
+| body | `data.$.isJustifie` | oui | boolean | |
+| body | `data.$.motif` | non | string | |
 
-{% swagger-parameter in="body" name="data.$.dateStart" required="true" type="string" %}
-Date de début au format DD/MM/YYYY-HH:mm
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="data.$.dateEnd" required="true" type="string" %}
-Date de fin au format DD/MM/YYYY-HH:mm
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="data.$.type" required="true" type="string" %}
-`absence` ou `retard`
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="data.$.isJustifie" required="true" type="boolean" %}
-
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="data.$.motif" required="false" type="string" %}
-
-{% endswagger-parameter %}
-
-{% swagger-response status="200: OK" %}
-{% endswagger-response %}
-{% endswagger %}
+**Réponse `200: OK`**
 
 **Exemple**
 

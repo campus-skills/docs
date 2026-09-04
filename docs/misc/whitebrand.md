@@ -13,6 +13,7 @@ Il existe deux types de marque blanche pour le nom de domaine de l'application.
 L'application est accessible sur un sous-domaine parmi une liste de domaines proposées, par exemple `https://votre-nom.campus-skills.com`.
 
 Les domaines proposés sont les suivants :
+
 - campus-skills.com
 - livretalternance.com
 - livretapprenant.com

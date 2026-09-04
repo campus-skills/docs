@@ -75,7 +75,7 @@ Ce module vous permet de récupérer les validations d'un étudiant.
 #### Entrées
 Vous devez fournir l'id de l'étudiant que vous nous avez transmis au moment de la synchronisation.
 #### Sorties
-Vous recevrez un objet contenant le nom de l'étudiant, son id, et les validations par session. Pour savoir plus, voir [la documentation](https://docs.campus-skills.com/api-public/main#recuperer-les-notes-et-les-validations-de-competences-dun-apprenant).
+Vous recevrez un objet contenant le nom de l'étudiant, son id, et les validations par session. Pour savoir plus, voir [la documentation](https://docs.campus-skills.com/api-public/api-routes/#recuperer-les-notes-et-les-validations-de-competences-dun-apprenant).
 
 
 # Tips & Tricks
