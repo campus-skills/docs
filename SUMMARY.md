@@ -1,29 +1,16 @@
 # Table of contents
 
 * [Bienvenue](README.md)
-* [Récupérer son token](recuperer-son-token.md)
 
-## API public
+## API publique
 
-* [API Public](api-public/en-cours.md)
+* [Utilisation de l'API](api-public/how-to-use.md)
+* [Routes d'API](api-public/api-routes.md)
+* [Lien sans mot de passe](api-public/passwordLess.md)
+* [Synchronisation des contrats](api-public/contracts.md)
+* [Connecteur Make](api-public/make.md)
 
-## Synchronisations avec logiciels tiers
+## Divers
 
-* [Ypareo](synchronisations-avec-logiciels-tiers/ypareo.md)
-* [Aimaira](synchronisations-avec-logiciels-tiers/aimaira.md)
-* [SCForm/Galia](synchronisations-avec-logiciels-tiers/scform.md)
-* [Tu commences demain](synchronisations-avec-logiciels-tiers/scform-1.md)
-* [GestiBase](synchronisations-avec-logiciels-tiers/gestibase.md)
-* [Excel/CSV](synchronisations-avec-logiciels-tiers/csv.md)
-* [Nos APIs](synchronisations-avec-logiciels-tiers/apis.md)
-* [Connecteur Make](synchronisations-avec-logiciels-tiers/make.md)
-
-## SSO
-
-* [SSO avec votre logiciel](sso/sso-avec-votre-logiciel.md)
-* [SSO Campus Skills](sso/sso-campus-skills.md)
-* [Lien sans mot de passe](sso/connection-passwordLess.md)
-
-## Marque blanche
-
-* [Mise en place](marque-blanche/mise-en-place.md)
+* [SSO](misc/sso.md)
+* [Marque blanche](misc/whitebrand.md)
