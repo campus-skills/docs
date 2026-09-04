@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://docs.campus-skills.com/</loc>
+         <lastmod>2026-09-04</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.campus-skills.com/api-public/api-routes/</loc>
+         <lastmod>2026-09-04</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.campus-skills.com/api-public/contracts/</loc>
+         <lastmod>2026-09-04</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.campus-skills.com/api-public/how-to-use/</loc>
+         <lastmod>2026-09-04</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.campus-skills.com/api-public/make/</loc>
+         <lastmod>2026-09-04</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.campus-skills.com/api-public/passwordLess/</loc>
+         <lastmod>2026-09-04</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.campus-skills.com/misc/sso/</loc>
+         <lastmod>2026-09-04</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.campus-skills.com/misc/whitebrand/</loc>
+         <lastmod>2026-09-04</lastmod>
+    </url>
+</urlset>
