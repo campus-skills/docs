@@ -66,36 +66,38 @@ Un tableau représentant l'intégralité de vos contrats actifs, cf exemple plus
 #### Exemple
 
 ```json
-[
-    {
-        codeContrat: "1234",
-        dateDebut: "01/09/2025",
-        dateFin: "30/06/2026",
-        nomEntreprise: "Auchan",
-        codeGroupe: "Groupe1",
-        nomGroupe: "BTS MCO Rennes 1ère année",
-        codeSite: "Site1",
-        nomSite: "Rennes",
-        codePeriode: "Periode1",
-        nomPeriode: "2025/2026",
-        codeAnnee: "Annee1",
-        nomAnnee: "1ère année",
-        codeFormation: "BTSMCO",
-        nomFormation: "BTS MCO",
-        codeApprenant: "Apprenant1",
-        prenomApprenant: "Prénom apprenant",
-        nomApprenant: "Nom apprenant",
-        emailApprenant: "apprenant@email.com",
-        codePersonnel: "Personnel1",
-        prenomPersonnel: "Prénom personnel",
-        nomPersonnel: "Nom personnel",
-        emailPersonnel: "personnel@email.com",
-        codeMaitreApprentissage: "MaitreApprentissage1",
-        prenomMaitreApprentissage: "Prénom MaitreApprentissage",
-        nomMaitreApprentissage: "Nom MaitreApprentissage",
-        emailMaitreApprentissage: "MaitreApprentissage@email.com"
-    }
-]
+{
+    "contrats": [
+        {
+            "codeContrat": "1234",
+            "dateDebut": "01/09/2025",
+            "dateFin": "30/06/2026",
+            "nomEntreprise": "Auchan",
+            "codeGroupe": "Groupe1",
+            "nomGroupe": "BTS MCO Rennes 1ère année",
+            "codeSite": "Site1",
+            "nomSite": "Rennes",
+            "codePeriode": "Periode1",
+            "nomPeriode": "2025/2026",
+            "codeAnnee": "Annee1",
+            "nomAnnee": "1ère année",
+            "codeFormation": "BTSMCO",
+            "nomFormation": "BTS MCO",
+            "codeApprenant": "Apprenant1",
+            "prenomApprenant": "Prénom apprenant",
+            "nomApprenant": "Nom apprenant",
+            "emailApprenant": "apprenant@email.com",
+            "codePersonnel": "Personnel1",
+            "prenomPersonnel": "Prénom personnel",
+            "nomPersonnel": "Nom personnel",
+            "emailPersonnel": "personnel@email.com",
+            "codeMaitreApprentissage": "MaitreApprentissage1",
+            "prenomMaitreApprentissage": "Prénom MaitreApprentissage",
+            "nomMaitreApprentissage": "Nom MaitreApprentissage",
+            "emailMaitreApprentissage": "MaitreApprentissage@email.com"
+        }
+    ]
+}
 ```
 
 ### Nous envoyer uniquement les changements
