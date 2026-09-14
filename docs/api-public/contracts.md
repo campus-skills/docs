@@ -53,12 +53,13 @@ Un tableau représentant l'intégralité de vos contrats actifs, cf exemple plus
 
 `POST` `{{URL}}/api/sync/v2/contrats`
 
-**Réponse `200: OK`** — Retourne les contrats selon la même structure de données que celle envoyée dans le body
+**Réponse `200: OK`**
 
 ```javascript
 {
-  "total": 1,
-  "contrats": []
+  "success": true,
+  "validContrats": [], // contrats valides
+  "invalidContrats": [] // contrats rejetés car invalides
 }
 ```
 
@@ -95,6 +96,97 @@ Un tableau représentant l'intégralité de vos contrats actifs, cf exemple plus
         emailMaitreApprentissage: "MaitreApprentissage@email.com"
     }
 ]
+```
+
+### Nous envoyer uniquement les changements
+
+Plutôt que de renvoyer l'intégralité de vos contrats actifs à chaque synchronisation, vous pouvez utiliser cette route pour ne transmettre que les contrats ajoutés, modifiés ou supprimés depuis le dernier appel.
+Nous fusionnons ces changements avec les contrats que vous nous aviez transmis précédemment pour construire le tableau complet des contrats actifs.
+
+`POST` `{{URL}}/api/sync/v2/contrats/changes`
+
+**Corps de la requête**
+
+<table><thead><tr><th width="251.3096923828125">Name</th><th width="86.03125">Type</th><th>Description</th></tr></thead><tbody><tr><td>changes.added</td><td>array</td><td>Contrats à ajouter, même structure que pour l'envoi complet des contrats</td></tr><tr><td>changes.updated</td><td>array</td><td>Contrats à mettre à jour, même structure que pour l'envoi complet des contrats</td></tr><tr><td>changes.removed</td><td>array de string</td><td>Liste des <code>codeContrat</code> à supprimer</td></tr></tbody></table>
+
+**Réponse `200: OK`**
+
+```javascript
+{
+  "success": true,
+  "validContrats": [], // contrats valides
+  "invalidContrats": [] // contrats rejetés car invalides
+}
+```
+
+#### Exemple
+
+```json
+{
+    "changes": {
+        "added": [
+            {
+                "codeContrat": "1234",
+                "dateDebut": "01/09/2025",
+                "dateFin": "30/06/2026",
+                "nomEntreprise": "Auchan",
+                "codeGroupe": "Groupe1",
+                "nomGroupe": "BTS MCO Rennes 1ère année",
+                "codeSite": "Site1",
+                "nomSite": "Rennes",
+                "codePeriode": "Periode1",
+                "nomPeriode": "2025/2026",
+                "codeAnnee": "Annee1",
+                "nomAnnee": "1ère année",
+                "codeFormation": "BTSMCO",
+                "nomFormation": "BTS MCO",
+                "codeApprenant": "Apprenant1",
+                "prenomApprenant": "Prénom apprenant",
+                "nomApprenant": "Nom apprenant",
+                "emailApprenant": "apprenant@email.com",
+                "codePersonnel": "Personnel1",
+                "prenomPersonnel": "Prénom personnel",
+                "nomPersonnel": "Nom personnel",
+                "emailPersonnel": "personnel@email.com",
+                "codeMaitreApprentissage": "MaitreApprentissage1",
+                "prenomMaitreApprentissage": "Prénom MaitreApprentissage",
+                "nomMaitreApprentissage": "Nom MaitreApprentissage",
+                "emailMaitreApprentissage": "MaitreApprentissage@email.com"
+            }
+        ],
+        "updated": [
+            {
+                "codeContrat": "5678",
+                "dateDebut": "01/09/2025",
+                "dateFin": "30/06/2026",
+                "nomEntreprise": "Decathlon",
+                "codeGroupe": "Groupe2",
+                "nomGroupe": "BTS MCO Rennes 2ème année",
+                "codeSite": "Site1",
+                "nomSite": "Rennes",
+                "codePeriode": "Periode1",
+                "nomPeriode": "2025/2026",
+                "codeAnnee": "Annee2",
+                "nomAnnee": "2ème année",
+                "codeFormation": "BTSMCO",
+                "nomFormation": "BTS MCO",
+                "codeApprenant": "Apprenant2",
+                "prenomApprenant": "Prénom apprenant 2",
+                "nomApprenant": "Nouveau nom apprenant",
+                "emailApprenant": "apprenant2@email.com",
+                "codePersonnel": "Personnel1",
+                "prenomPersonnel": "Prénom personnel",
+                "nomPersonnel": "Nom personnel",
+                "emailPersonnel": "personnel@email.com",
+                "codeMaitreApprentissage": "MaitreApprentissage2",
+                "prenomMaitreApprentissage": "Prénom MaitreApprentissage 2",
+                "nomMaitreApprentissage": "Nom MaitreApprentissage 2",
+                "emailMaitreApprentissage": "MaitreApprentissage2@email.com"
+            }
+        ],
+        "removed": ["9999"]
+    }
+}
 ```
 
 ### Récupérer tous les contrats intégrés
