@@ -54,8 +54,8 @@ Un tableau représentant l'intégralité de vos contrats actifs, cf exemple plus
   <tr><th width="251.3096923828125">Name</th><th width="86.03125">Type</th><th>Description</th></tr>
 </thead>
 <tbody>
-  <tr><td>dateFin</td><td>string</td><td>Date au format DD/MM/YYYY</td></tr>
-  <tr><td>dateDebut</td><td>string</td><td>Date au format DD/MM/YYYY</td></tr>
+  <tr><td>dateFin<mark style="color:red;">*</mark></td><td>string</td><td>Date au format DD/MM/YYYY</td></tr>
+  <tr><td>dateDebut<mark style="color:red;">*</mark></td><td>string</td><td>Date au format DD/MM/YYYY</td></tr>
   <tr><td>nomGroupe<mark style="color:red;">*</mark></td><td>string</td><td>Nom du groupe</td></tr>
   <tr><td>nomEntreprise<mark style="color:red;">*</mark></td><td>string</td><td>Nom de l'entreprise</td></tr>
   <tr><td>emailPersonnel<mark style="color:red;">*</mark></td><td>string</td><td>Email du tuteur école</td></tr>
@@ -72,15 +72,15 @@ Un tableau représentant l'intégralité de vos contrats actifs, cf exemple plus
   <tr><td>codeApprenant<mark style="color:red;">*</mark></td><td>string</td><td>Identifiant de l'apprenant, doit être unique parmi tous les utilisateurs</td></tr>
   <tr><td>codeGroupe<mark style="color:red;">*</mark></td><td>string</td><td>L'identifiant unique du groupe de l'apprenant</td></tr>
   <tr><td>codeContrat<mark style="color:red;">*</mark></td><td>string</td><td>L'identifiant unique du contrat</td></tr>
-  <tr><td>codePeriode<mark style="color:red;">*</mark></td><td>string</td><td>Identifiant de la période associée ( le couple codePeriode, nomPeriode doit être unique )</td></tr>
+  <tr><td>codePeriode<mark style="color:red;">*</mark></td><td>string</td><td>Identifiant de la période associée. Chaque code de période est associé à un seul nom, et inversement.</td></tr>
   <tr><td>nomPeriode<mark style="color:red;">*</mark></td><td>string</td><td>Nom de la période</td></tr>
-  <tr><td>codeFormation<mark style="color:red;">*</mark></td><td>string</td><td>Identifiant de la formation ( le couple codeFormation, nomFormation doit être unique )</td></tr>
+  <tr><td>codeFormation<mark style="color:red;">*</mark></td><td>string</td><td>Identifiant de la formation. Chaque code de formation est associé à un seul nom, et inversement.</td></tr>
   <tr><td>nomFormation<mark style="color:red;">*</mark></td><td>string</td><td>Le nom de la formation</td></tr>
-  <tr><td>codeSite<mark style="color:red;">*</mark></td><td>string</td><td>Identifiant du site ( le couple codeSite, nomSite doit être unique )</td></tr>
+  <tr><td>codeSite<mark style="color:red;">*</mark></td><td>string</td><td>Identifiant du site. Chaque code de site est associé à un seul nom, et inversement.</td></tr>
   <tr><td>nomSite<mark style="color:red;">*</mark></td><td>string</td><td>Nom du site</td></tr>
   <tr><td>codeMarque</td><td>string</td><td>Code de la marque</td></tr>
   <tr><td>nomMarque</td><td>string</td><td>Nom de la marque</td></tr>
-  <tr><td>codeAnnee<mark style="color:red;">*</mark></td><td>string</td><td>Identifiant de l'année ( le couple codeAnnee, nomAnnee doit être unique )</td></tr>
+  <tr><td>codeAnnee<mark style="color:red;">*</mark></td><td>string</td><td>Identifiant de l'année. Chaque code d'année est associé à un seul nom, et inversement.</td></tr>
   <tr><td>nomAnnee<mark style="color:red;">*</mark></td><td>string</td><td>Nom de l'année</td></tr>
   <tr><td>missionTitle</td><td>string</td><td>Titre de la mission</td></tr>
   <tr><td>missionDetails</td><td>string</td><td>Descriptif de la mission</td></tr>
