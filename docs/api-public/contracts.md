@@ -49,7 +49,45 @@ Un contrat intégré est un contrat transmis que nous avons su associer à une s
 
 Un tableau représentant l'intégralité de vos contrats actifs, cf exemple plus bas. Ci-dessous la liste des champs pour chaque contrat :
 
-<table><thead><tr><th width="251.3096923828125">Name</th><th width="86.03125">Type</th><th>Description</th></tr></thead><tbody><tr><td>dateFin</td><td>string</td><td>Date au format DD/MM/YYYY</td></tr><tr><td>dateDebut</td><td>string</td><td>Date au format DD/MM/YYYY</td></tr><tr><td>nomGroupe<mark style="color:red;">*</mark></td><td>string</td><td>Nom du groupe</td></tr><tr><td>nomEntreprise<mark style="color:red;">*</mark></td><td>string</td><td>Nom de l'entreprise</td></tr><tr><td>emailPersonnel<mark style="color:red;">*</mark></td><td>string</td><td>Email du tuteur école</td></tr><tr><td>prenomPersonnel<mark style="color:red;">*</mark></td><td>string</td><td>Prénom du tuteur école</td></tr><tr><td>nomPersonnel<mark style="color:red;">*</mark></td><td>string</td><td>Nom du tuteur école</td></tr><tr><td>codePersonnel<mark style="color:red;">*</mark></td><td>string</td><td>Code du tuteur école, doit être unique parmi tous les utilisateurs</td></tr><tr><td>emailMaitreApprentissage<mark style="color:red;">*</mark></td><td>string</td><td>Email maitre apprentissage</td></tr><tr><td>prenomMaitreApprentissage<mark style="color:red;">*</mark></td><td>string</td><td>Prenom maitre apprentissage</td></tr><tr><td>nomMaitreApprentissage<mark style="color:red;">*</mark></td><td>string</td><td>Nom maitre apprentissage</td></tr><tr><td>codeMaitreApprentissage<mark style="color:red;">*</mark></td><td>string</td><td>Identifiant du maitre apprentissage, doit être unique parmi tous les utilisateurs</td></tr><tr><td>nomApprenant<mark style="color:red;">*</mark></td><td>string</td><td>Nom de l'apprenant</td></tr><tr><td>emailApprenant<mark style="color:red;">*</mark></td><td>string</td><td>email de l'apprenant</td></tr><tr><td>prenomApprenant<mark style="color:red;">*</mark></td><td>string</td><td>Prenom de l'apprenant</td></tr><tr><td>codeApprenant<mark style="color:red;">*</mark></td><td>string</td><td>Identifiant de l'apprenant, doit être unique parmi tous les utilisateurs</td></tr><tr><td>codeGroupe<mark style="color:red;">*</mark></td><td>string</td><td>L'identifiant unique du groupe de l'apprenant</td></tr><tr><td>codeContrat<mark style="color:red;">*</mark></td><td>string</td><td>L'identifiant unique du contrat</td></tr><tr><td>codePeriode<mark style="color:red;">*</mark></td><td>string</td><td>Identifiant de la période associée ( le couple codePeriode, nomPeriode doit être unique )</td></tr><tr><td>nomPeriode<mark style="color:red;">*</mark></td><td>string</td><td>Nom de la période</td></tr><tr><td>codeFormation<mark style="color:red;">*</mark></td><td>string</td><td>Identifiant de la formation ( le couple codeFormation, nomFormation doit être unique )</td></tr><tr><td>nomFormation<mark style="color:red;">*</mark></td><td>string</td><td>Le nom de la formation</td></tr><tr><td>codeSite<mark style="color:red;">*</mark></td><td>string</td><td>Identifiant du site ( le couple codeSite, nomSite doit être unique )</td></tr><tr><td>nomSite<mark style="color:red;">*</mark></td><td>string</td><td>Nom du site</td></tr><tr><td>codeMarque</td><td>string</td><td>Code de la marque</td></tr><tr><td>nomMarque</td><td>string</td><td>Nom de la marque</td></tr><tr><td>codeAnnee<mark style="color:red;">*</mark></td><td>string</td><td>Identifiant de l'année ( le couple codeAnnee, nomAnnee doit être unique )</td></tr><tr><td>nomAnnee<mark style="color:red;">*</mark></td><td>string</td><td>Nom de l'année</td></tr><tr><td>missionTitle</td><td>string</td><td>Titre de la mission</td></tr><tr><td>missionDetails</td><td>string</td><td>Descriptif de la mission</td></tr><tr><td>monthStartGroup</td><td>string</td><td>Info de démarrage du groupe permettant de gérer les rentrées décalées</td></tr><tr><td>rncp</td><td>string</td><td>codeRNCP</td></tr></tbody></table>
+<table>
+<thead>
+  <tr><th width="251.3096923828125">Name</th><th width="86.03125">Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+  <tr><td>dateFin</td><td>string</td><td>Date au format DD/MM/YYYY</td></tr>
+  <tr><td>dateDebut</td><td>string</td><td>Date au format DD/MM/YYYY</td></tr>
+  <tr><td>nomGroupe<mark style="color:red;">*</mark></td><td>string</td><td>Nom du groupe</td></tr>
+  <tr><td>nomEntreprise<mark style="color:red;">*</mark></td><td>string</td><td>Nom de l'entreprise</td></tr>
+  <tr><td>emailPersonnel<mark style="color:red;">*</mark></td><td>string</td><td>Email du tuteur école</td></tr>
+  <tr><td>prenomPersonnel<mark style="color:red;">*</mark></td><td>string</td><td>Prénom du tuteur école</td></tr>
+  <tr><td>nomPersonnel<mark style="color:red;">*</mark></td><td>string</td><td>Nom du tuteur école</td></tr>
+  <tr><td>codePersonnel<mark style="color:red;">*</mark></td><td>string</td><td>Code du tuteur école, doit être unique parmi tous les utilisateurs</td></tr>
+  <tr><td>emailMaitreApprentissage<mark style="color:red;">*</mark></td><td>string</td><td>Email maitre apprentissage</td></tr>
+  <tr><td>prenomMaitreApprentissage<mark style="color:red;">*</mark></td><td>string</td><td>Prenom maitre apprentissage</td></tr>
+  <tr><td>nomMaitreApprentissage<mark style="color:red;">*</mark></td><td>string</td><td>Nom maitre apprentissage</td></tr>
+  <tr><td>codeMaitreApprentissage<mark style="color:red;">*</mark></td><td>string</td><td>Identifiant du maitre apprentissage, doit être unique parmi tous les utilisateurs</td></tr>
+  <tr><td>nomApprenant<mark style="color:red;">*</mark></td><td>string</td><td>Nom de l'apprenant</td></tr>
+  <tr><td>emailApprenant<mark style="color:red;">*</mark></td><td>string</td><td>email de l'apprenant</td></tr>
+  <tr><td>prenomApprenant<mark style="color:red;">*</mark></td><td>string</td><td>Prenom de l'apprenant</td></tr>
+  <tr><td>codeApprenant<mark style="color:red;">*</mark></td><td>string</td><td>Identifiant de l'apprenant, doit être unique parmi tous les utilisateurs</td></tr>
+  <tr><td>codeGroupe<mark style="color:red;">*</mark></td><td>string</td><td>L'identifiant unique du groupe de l'apprenant</td></tr>
+  <tr><td>codeContrat<mark style="color:red;">*</mark></td><td>string</td><td>L'identifiant unique du contrat</td></tr>
+  <tr><td>codePeriode<mark style="color:red;">*</mark></td><td>string</td><td>Identifiant de la période associée ( le couple codePeriode, nomPeriode doit être unique )</td></tr>
+  <tr><td>nomPeriode<mark style="color:red;">*</mark></td><td>string</td><td>Nom de la période</td></tr>
+  <tr><td>codeFormation<mark style="color:red;">*</mark></td><td>string</td><td>Identifiant de la formation ( le couple codeFormation, nomFormation doit être unique )</td></tr>
+  <tr><td>nomFormation<mark style="color:red;">*</mark></td><td>string</td><td>Le nom de la formation</td></tr>
+  <tr><td>codeSite<mark style="color:red;">*</mark></td><td>string</td><td>Identifiant du site ( le couple codeSite, nomSite doit être unique )</td></tr>
+  <tr><td>nomSite<mark style="color:red;">*</mark></td><td>string</td><td>Nom du site</td></tr>
+  <tr><td>codeMarque</td><td>string</td><td>Code de la marque</td></tr>
+  <tr><td>nomMarque</td><td>string</td><td>Nom de la marque</td></tr>
+  <tr><td>codeAnnee<mark style="color:red;">*</mark></td><td>string</td><td>Identifiant de l'année ( le couple codeAnnee, nomAnnee doit être unique )</td></tr>
+  <tr><td>nomAnnee<mark style="color:red;">*</mark></td><td>string</td><td>Nom de l'année</td></tr>
+  <tr><td>missionTitle</td><td>string</td><td>Titre de la mission</td></tr>
+  <tr><td>missionDetails</td><td>string</td><td>Descriptif de la mission</td></tr>
+  <tr><td>monthStartGroup</td><td>string</td><td>Info de démarrage du groupe permettant de gérer les rentrées décalées</td></tr>
+  <tr><td>rncp</td><td>string</td><td>codeRNCP</td></tr>
+</tbody>
+</table>
 
 `POST` `{{URL}}/api/sync/v2/contrats`
 
@@ -109,7 +147,16 @@ Nous fusionnons ces changements avec les contrats que vous nous aviez transmis p
 
 **Corps de la requête**
 
-<table><thead><tr><th width="251.3096923828125">Name</th><th width="86.03125">Type</th><th>Description</th></tr></thead><tbody><tr><td>changes.added</td><td>array</td><td>Contrats à ajouter, même structure que pour l'envoi complet des contrats</td></tr><tr><td>changes.updated</td><td>array</td><td>Contrats à mettre à jour, même structure que pour l'envoi complet des contrats</td></tr><tr><td>changes.removed</td><td>array de string</td><td>Liste des <code>codeContrat</code> à supprimer</td></tr></tbody></table>
+<table>
+<thead>
+  <tr><th width="251.3096923828125">Name</th><th width="86.03125">Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+  <tr><td>changes.added</td><td>array</td><td>Contrats à ajouter, même structure que pour l'envoi complet des contrats</td></tr>
+  <tr><td>changes.updated</td><td>array</td><td>Contrats à mettre à jour, même structure que pour l'envoi complet des contrats</td></tr>
+  <tr><td>changes.removed</td><td>array de string</td><td>Liste des <code>codeContrat</code> à supprimer</td></tr>
+</tbody>
+</table>
 
 **Réponse `200: OK`**
 
