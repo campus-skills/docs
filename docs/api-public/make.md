@@ -1,4 +1,7 @@
-# Connecteur Make
+# Connecteur Make - DÉPRÉCIÉ
+
+!!! warning "Solution dépréciée"
+    Le connecteur Make n'est plus activement supporté. Il ne recevra plus de nouvelles fonctionnalités ni de mises à jour. Nous vous recommandons d'utiliser directement l'[API publique](how-to-use.md).
 
 Le connecteur Make est une solution puissante et intuitive pour gérer vos contrats.
 

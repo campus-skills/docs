@@ -37,7 +37,7 @@ nav:
       - Routes d'API: api-public/api-routes.md
       - Lien sans mot de passe: api-public/passwordLess.md
       - Synchronisation des contrats: api-public/contracts.md
-      - Connecteur Make: api-public/make.md
+      - Connecteur Make - DÉPRÉCIÉ: api-public/make.md
   - SSO:
       - SSO: misc/sso.md
   - Marque blanche:
